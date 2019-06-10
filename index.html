@@ -30,12 +30,9 @@
 <body>
 
     <section>
+       
         <header>
-            <!-- The navigation bar provides quick links to other pages on the website. The intent is to allow the user to go quickly to those
-             sections that interest them the most.  Social Media links are provided for quick access to the HK Social Media accounts. -->
-
-            <!-- This navigation bar menu will be on one line on larger screens, and will collapse behind a "hamburger" menu button on mobile screens. The navigation bar is fixed to allow the user easy access to the website without having to scroll up or down. 
-            I copied the code for this navbar and collapsible menu from the Whiskey (bootstrap module) project and modified it slightly for my own collapsible menu -->
+            <!--
 
             <nav class="navbar navbar-expand-md navbar-light my-navbar-style fixed-top">
 
@@ -54,28 +51,57 @@
                     </ul>
                 </div>
             </nav>
-        </header>
+        </header>  
+        -->
 
-        <div class="set-pos">
+        <div class="container-fluid test-con-bg set-pos">
+            <div class="row">
+                <div class="col-3 test-col-bg">
 
-            <h3>OVERVIEW</h3>
-            <div id="per-highlight-chart"></div>
+                    <div class="row test-row1">
+                        <div class="col-12 text-center">
+                            <h3>HIGHLIGHTS</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="per-highlight-chart"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="row test-row2">
+                        <div class="col-12 text-center">
+                            <h3>ACTIVITIES</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="per-activity-chart"></div>
+                        </div>
+                    </div>
 
+                    <div class="row test-row3">
+                        <div class="col-12 text-center">
+                            <h3>LODGINGS</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="per-residence-chart"></div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="row test-row4">
+
+                        <div class="col-12 text-center">
+                            <h3>LODGING TYPES</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="per-lodging-type-chart"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-        
-         <div>
 
-            <h3>HOTELS</h3>
-            <div id="per-residence-chart"></div>
-
-        </div>
-        
-        <div>
-
-            <h3>ACTIVITIES</h3>
-            <div id="per-activity-chart"></div>
-
-        </div>
 
         <!--
         <div class="col-12">

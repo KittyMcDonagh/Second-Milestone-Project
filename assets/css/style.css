@@ -1,3 +1,36 @@
+/* testinge */
+
+.test-con-bg {
+    background-color: blue;
+    padding:0;
+}
+
+.test-col-bg {
+    background-color: pink;
+    padding:0;
+}
+
+.test-row1 {
+    background-color: yellow;
+    
+}
+.test-row2 {
+    background-color: red;
+    
+}
+
+.test-row3 {
+    background-color: white;
+    
+}
+
+.test-row4 {
+    background-color: purple;
+    
+}
+
+
+
 /*--------------------------------------------Map*/
 
 /* Navigation bar. Font-family Nunito from google fonts, easy to read */
@@ -52,9 +85,8 @@
 
 .set-pos {
     position: relative;
-    top:80px;
+    
 }
-
 
 
 
