@@ -1,7 +1,7 @@
 /* testinge */
 
 .test-con-bg {
-    background-color: blue;
+    background-color: #fff2e6;
     padding:0;
 }
 
@@ -10,24 +10,6 @@
     padding:0;
 }
 
-.test-row1 {
-    background-color: yellow;
-    
-}
-.test-row2 {
-    background-color: red;
-    
-}
-
-.test-row3 {
-    background-color: white;
-    
-}
-
-.test-row4 {
-    background-color: purple;
-    
-}
 
 
 
@@ -83,8 +65,33 @@
 
 }
 
-.set-pos {
-    position: relative;
+.remove-padding {
+    padding: 0;
+}
+
+.welcome-style {
+    background-color: #ff8a66;
+    color: #0066cc;
+    padding:15px;
+}
+
+.smile-style {
+    color: #0066cc;
+    font-size: 16px;
+}
+
+
+
+.box-style {
+    background-color: #ffb199;
+    border: solid 1px;
+    border-color: #ffc4b3;
+    color: #0066cc;
+    min-width: 330px;
+    
+}
+.text-style {
+    color: #0066cc;
     
 }
 
@@ -111,3 +118,25 @@ div#map {
     height: 70%;
     background-color: pink;
 }
+
+/* Footer details.     */
+
+.footer-style {
+    background-color: #ff6333;
+    color: #0066cc;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+
+.footer-padding {
+    padding-top: 15px;
+}
+
+/*  An extra 20px will be added to the bottom padding for each section of the footer. 
+   This is to create a space between each section when shown on the mobile, to make it easier to read. */
+
+.footer-style-pb {
+/*    padding-bottom: 5px; */
+}
+
