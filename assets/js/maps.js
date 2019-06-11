@@ -1,63 +1,98 @@
 function initMap() {
     var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 8,
+        zoom: 7,
         center: {
-//            lat: 46.619261,
-//            lng: -33.134766
 
-// Johanesburg
- //           lat: -26.1715046,
-   //         lng: 27.969983412
-     
-     //Garden Route National Park       
+            //Garden Route National Park       
             lat: -33.834548,
             lng: 22.8934339
- 
+
         }
     });
-    
-
 
     var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     var locations = [
-//        { lat: 40.785091, lng: -73.968285 },
-//        { lat: 41.084045, lng: -73.874245 },
-//        { lat: 40.754932, lng: -73.984016 }
-        
-        //Cape Town International airport
-        { lat: -33.971463, lng: 18.599896417 },
-        
-        // Hotel Verde
+
+        // A = Hotel Verde
         { lat: -33.97415, lng: 18.589582917 },
-        
-        // Quayside Hotel, Simonstown
+
+
+        // B = Chapman's Peak
+        { lat: -34.1007996, lng: 18.358971615 },
+
+        // C = Quayside Hotel, Simonstown
         { lat: -34.1928743, lng: 18.430560817 },
-        
-        // Teniqua Treetops
-        { lat: -33.946955, lng: 22.852828317 },
-        
-        // Milkwood Manor Guesthouse
+
+
+        // D = Cape of Good Hope
+        { lat: -34.3567013, lng: 18.470203916 },
+
+        // E = Stellenbosch
+        { lat: -33.9466716, lng: 18.77454512 },
+
+        // F = Marianne Wine Estate
+        { lat: -33.8298546, lng: 18.877630117 },
+
+        // G = Knysna Elephant Park
+        { lat: -34.0385536, lng: 23.26503617 },
+
+        // H = Plettenburg Bay
+        { lat: -34.0610681, lng: 23.29123112 },
+
+        // I = Milkwood Manor
         { lat: -34.050294, lng: 23.373779317 },
-        
-        //Skepboom Tented Camp
+
+
+        // J = Nature' Valley
+        { lat: -33.9782911, lng: 23.547230515 },
+
+        // K = Port Elizabeth
+        { lat: -33.8012478, lng: 25.249983910 },
+
+        // L = Skepboom Tented Camp
         { lat: -33.5125013, lng: 25.751274517 },
-        
-        // Nambiti Private Game Reserve
-        { lat: -28.4239819, lng: 29.976823317 },
-        
-        // Ingeli Forest Resort
-        { lat: -30.537793, lng: 29.683793317 },
-        
-        // Elephant Rock Private Safari Lodge
-        { lat: -28.5106028, lng: 29.939163217 },
-        
-        // Kruger National Park
+
+        // M = Addo Elephant National Park
+        { lat: -33.4833333, lng: 25.747811317 },
+
+        // N = Lower Sabie Rest Camp
+        { lat: -25.11986, lng: 31.913190317 },
+
+        // O = Kruger National Park
         { lat: -23.9883848, lng: 31.552551517 },
-        
-        // Glen Afric
+
+
+        // P = Glen Afric
         { lat: -25.8135641, lng: 27.869428517 },
-        
+
+        // Q = Protea Hotel by Marriott
+        { lat: -26.1486465, lng: 27.922543617 },
+
+        // R = Soweto
+        { lat: -26.2438785, lng: 27.768230212 },
+
+        // S = Lion and Safari Park
+        { lat: -25.8324043, lng: 27.88659517 },
+
+        // T = de Wildt Cheetah Sanctuary
+        { lat: -25.6736889, lng: 27.921508817 },
+
+        // U = Zulu Nyala Country Manor
+        { lat: -25.9916381, lng: 27.97380617 },
+
+        // V = Johannesburg
+        { lat: -26.1715046, lng: 27.969983412 },
+
+        // W = FNB Stadium
+        { lat: -26.2347569, lng: 27.980466717 },
+
+        // X = Ukutula Lodge and Game Reserve
+        { lat: -25.5219364, lng: 27.67158617 },
+
+        // Y = Northcliff Ridge Eco Park
+        { lat: -26.1452546, lng: 27.967363217 }
+
     ];
 
     var markers = locations.map(function(location, i) {
@@ -65,7 +100,66 @@ function initMap() {
             position: location,
             label: labels[i % labels.length]
         });
-    }); 
+    });
 
     var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
+
+// Show Lodgings only
+
+function lodgingsMap() {
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 7,
+        center: {
+
+            //Garden Route National Park       
+            lat: -33.834548,
+            lng: 22.8934339
+
+        }
+    });
+
+    var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    var locations = [
+
+        // A = Hotel Verde
+        { lat: -33.97415, lng: 18.589582917 },
+
+        // C = Quayside Hotel, Simonstown
+        { lat: -34.1928743, lng: 18.430560817 },
+
+        // G = Knysna Elephant Park
+        { lat: -34.0385536, lng: 23.26503617 },
+
+        // I = Milkwood Manor
+        { lat: -34.050294, lng: 23.373779317 },
+
+        // L = Skepboom Tented Camp
+        { lat: -33.5125013, lng: 25.751274517 },
+
+        // N = Lower Sabie Rest Camp
+        { lat: -25.11986, lng: 31.913190317 },
+
+        // P = Glen Afric
+        { lat: -25.8135641, lng: 27.869428517 },
+
+        // Q = Protea Hotel by Marriott
+        { lat: -26.1486465, lng: 27.922543617 },
+
+    ];
+
+    var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+        });
+    });
+
+    var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+}
+
+
+
+
+

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDHHyac2SiOYPNYxXMK7rqJjnB8nCaaxE&callback=initMap"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -22,10 +22,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <title>SOUTH AFRICAN TRIP</title>
+
 
 </head>
 
@@ -45,51 +43,55 @@
             </div>
         </header>
 
-
-
         <div class="row no-gutters">
+            <div class="col-12 col-md-3 p-0">
+                <div class="row box-style no-gutters">
+                    <div class="col-12 text-center text-style">
+                        <h6>OVERVIEW</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" id="per-highlight-chart"></div>
+                    </div>
+                </div>
 
-            <div class="col-12 col-md-4 p-0 box-style">
-                <div class="col-12 text-center text-style">
-                    <div id="per-highlight-chart"></div>
+                <div class="row box-style no-gutters">
+                    <div class="col-12 text-center text-style">
+                        <h6>ACTIVITIES</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" id="per-activity-chart"></div>
+                    </div>
+                </div>
+
+                <div class="row box-style no-gutters">
+
+                    <div class="col-12 text-center text-style">
+                        <h6>LODGINGS</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" id="per-lodging-type-chart"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-4 p-0 box-style">
-                <div class="col-12 text-center text-style">
-                    <div id="per-lodging-type-chart"></div>
+            <!-- Map of trip from Dublin to South Africa here -->
+<!--
+            <div class="col-md-9" id="map">
+                <div class="col-12">
+                    <img src="assets/images/dublintocapetown.jpg" alt="From Dublin to Capetown" class="map-dub-cape">
                 </div>
             </div>
-
-            <div class="col-12 col-md-4 p-0 box-style">
-                <div class="col-12 text-center text-style">
-                    <div id="per-safari-chart"></div>
-                </div>
-            </div>
+            -->
             
+            
+            
+            
+
+            <div class="container" id="map"></div>
+
+
+
         </div>
-
-        <!-- Show Map on lower half of the screen -->
-
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-12 col-md-4 box-style">
-                    <div id="map"></div>
-                </div>
-                
-                <div class="col-12 col-md-4 box-style">
-                    <div class="col-12" id="show-lodgings">
-                        
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 box-style">
-                    <div class="col-12" id="show-safaris-sightseeing">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
 
 
@@ -111,7 +113,7 @@
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script src="assets/js/maps.js"></script>
-
+    
     <!-- Script to create the piechart dashboard -->
 
     <script src="assets/js/dashboard.js"></script>
