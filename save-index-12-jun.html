@@ -22,7 +22,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
-
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <title>SOUTH AFRICAN TRIP</title>
@@ -45,88 +45,65 @@
             </div>
         </header>
 
-        <!-- First section shows overall Piechart and the Map -->
+
 
         <div class="row no-gutters">
 
-            <!-- Display Piechart showing all details of the trip -->
-
-            <div class="col-12 col-md-3 p-0 box-style text-center">
-                <div>
-                    <p class="p-style">Overall Trip - Click on this chart to reset all</p>
+            <div class="col-12 col-md-3 p-0 box-style">
+                <div class="col-12 text-center text-style">
+                    <div id="per-highlight-chart"></div>
                 </div>
-
-                <div class="chart" id="overall-trip-chart"></div>
-
             </div>
 
-            <!-- Display the Map here. The above Piechart will indicate what is shown on the map -->
-
-            <div class="col-12 col-md-9 box-style">
-                <div id="map"></div>
+            <div class="col-12 col-md-3 p-0 box-style">
+                <div class="col-12 text-center text-style">
+                    <div id="per-lodging-type-chart"></div>
+                </div>
             </div>
+
+            <div class="col-12 col-md-3 p-0 box-style">
+                <div class="col-12 text-center text-style">
+                    <div id="per-safari-chart"></div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-3 p-0 box-style">
+                <div class="col-12 text-center text-style">
+                    <div id="per-sightseeing-chart"></div>
+                </div>
+            </div>
+            
         </div>
 
-        <!-- Second section shows the types of lodgings stayed in and the details of these when selected -->
+        <!-- Show Map on lower half of the screen -->
 
-        <div class="row no-gutters">
-
-            <!-- Display Piechart showing the types of lodgings stayed in -->
-
-            <div class="col-12 col-md-3 p-0 box-style text-center text-style">
-                <div>
-                    <p class="p-style">Lodgings - Select types</p>
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-12 col-md-3 box-style">
+                    <div id="map"></div>
                 </div>
-                <div class="chart" id="lodging-types-chart"></div>
-            </div>
-
-            <!-- Display details of the types of lodgings stayed in. The above Piechart will indicate the type -->
-
-            <div class="col-12 col-md-9 box-style">
-                <div id="show-lodgings"></div>
-            </div>
-
-        </div>
-
-        <!-- Third section shows the types of Safaris and the details of these when selected -->
-
-        <div class="row no-gutters">
-
-            <!-- Display Piechart showing the types of Safaris -->
-
-            <div class="col-12 col-md-3 p-0 box-style text-center text-style">
-                <div>
-                    <p class="p-style">Safaris - Select Animals</p>
+                
+                <div class="col-12 col-md-3 box-style">
+                    <div class="col-12" id="show-lodgings">
+                        
+                    </div>
                 </div>
-                <div class="chart" id="safari-chart"></div>
-            </div>
-
-            <!-- Display details of the types of Safaris. The above Piechart will indicate the type shown -->
-
-            <div class="col-12 col-md-9 box-style">
-                <div id="show-safaris"></div>
+                <div class="col-12 col-md-3 box-style">
+                    <div class="col-12" id="show-safaris">
+                        
+                    </div>
+                    
+                    <div class="col-12 col-md-3 box-style">
+                    <div class="col-12" id="show-sightseeing">
+                        
+                    </div>
+                </div>
             </div>
         </div>
 
 
-        <!-- Fourth section shows the types of Sightseeing and the details of these when selected -->
 
-        <div class="row no-gutters">
 
-            <div class="col-12 col-md-3 p-0 box-style text-center text-style">
-                <div>
-                    <p class="p-style">Sightseeing - Select types</p>
-                </div>
-                <div class="chart" id="sightseeing-chart"></div>
-            </div>
-
-            <!-- Display details of the types of Sightseeing. The above Piechart will indicate the type shown -->
-
-            <div class="col-12 col-md-9 box-style">
-                <div id="show-sightseeing"></div>
-            </div>
-
-        </div>
 
         <!-- FOOTER -->
         <footer class="footer-style">

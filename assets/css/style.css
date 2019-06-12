@@ -1,78 +1,9 @@
-/* testinge */
-
-.test-con-bg {
-    background-color: #fff2e6;
-    padding:0;
-}
-
-.test-col-bg {
-    background-color: pink;
-    padding:0;
-}
-
-
-
-
-/*--------------------------------------------Map*/
-
-/* Navigation bar. Font-family Nunito from google fonts, easy to read */
-
-.my-navbar-style {
-    background-color: #fafaff;
-    color: #3b3b3b;
-    font-family: "Nunito", sans-serif;
-    font-size: 18px;
-}
-
-.my-sa-logo {
-    background: url("../images/dublintocapetown.jpg");
-    min-height: 64px;
-    min-width: 48px;
-    border-style: outset;
-    border-width: 1px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -moz-transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
-
-/*  Lining up the nave bar menu for different size screens   */
-
-.my-nav-menu-spacing {
-    padding-left: 65px;
-}
-
-@media(min-width:768px) {
-    .my-nav-menu-spacing {
-        padding-left: 55px;
-    }
-}
-
-@media(min-width:1024px) {
-    .my-nav-menu-spacing {
-        padding-left: 80px;
-    }
-
-}
-
-@media(min-width:1025px) {
-    .my-nav-menu-spacing {
-        padding-left: 180px;
-    }
-
-}
-
-.remove-padding {
-    padding: 0;
-}
+/* Colors for welcome banner - background-color: #e7effd; color: #4a89f3;  */
 
 .welcome-style {
-    background-color: #E9F6EF;
-    color: #0066cc;
-    padding:15px;
+    background-color: #e7effd;
+    color: #4a89f3;
+    padding: 15px;
 }
 
 .smile-style {
@@ -82,17 +13,39 @@
 
 
 /* Using a color from Google Maps scheme color (https://www.schemecolor.com/google-maps-colors.php) for background */
+
 .box-style {
     background-color: #EDF3FE;
     border: solid 1px;
     border-color: #C9DCFB;
     color: #0066cc;
-    min-width: 330px;
-    
+    min-width: 300px;
+    height: 360px;
+
 }
+
+/* P-style - background color: #6fa1f6; / color: #e7effd; */
+
+.p-style {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+    text-align: center;
+    background-color:  #6fa1f6;
+    color: #e7effd;
+    font-weight: normal;
+}
+
+/* The heading above the chart is pushing the chart down. Move it up 20 pixels */
+
+.chart {
+    position: relative;
+    top: -34px;
+}
+
 .text-style {
     color: #0066cc;
-    
+
 }
 
 
@@ -100,12 +53,12 @@
 .map-dub-cape {
     height: 200px;
     width: 151px;
-    padding:0px;
+    padding: 0px;
     margin: auto;
 }
 
 .map-dub-cape-tn-style {
-    height:396;
+    height: 396;
     width: 300;
 }
 
@@ -120,8 +73,8 @@ div#map {
 /* Footer details.     */
 
 .footer-style {
-    background-color: #ff6333;
-    color: #0066cc;
+    color: #e7effd;
+    background-color: #4a89f3;
     margin-bottom: 0px;
     text-align: center;
 }
@@ -135,6 +88,5 @@ div#map {
    This is to create a space between each section when shown on the mobile, to make it easier to read. */
 
 .footer-style-pb {
-/*    padding-bottom: 5px; */
+    /*    padding-bottom: 5px; */
 }
-
