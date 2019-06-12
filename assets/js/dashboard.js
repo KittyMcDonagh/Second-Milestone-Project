@@ -45,22 +45,110 @@ function makeGraphs(error, transactionsData) {
     dc.renderAll();
 }
 
-$("#per-lodging-type-chart").click(function() {
 
-    var firstDiv = $("selected").first()
-
-    $("#show-lodgings").text("firstDiv = " + firstDiv[0])
-
-    lodgingsMap();
-
-});
-
-$("#per-highlight-chart").click(function() {
-
-    $("#show-safaris-sightseeing").text("is anything happening?")
-
+$("#overall-trip-chart").click(function() {
     queue()
         .defer(d3.json, "/assets/data/sa-original.json")
         .await(makeGraphs);
+        
+        initMap();
+
+});
+
+$("#lodging-types-chart").click(function() {
+
+    //   Get the element where the Lodgings details will be shown
+
+    var el = document.getElementById("show-lodgings");
+
+    // Get the selected pieces of the pie that are selected
+
+    var sliceName = $(".pie-slice-group").children(".selected");
+
+    var pieSlices = [];
+
+    // The second class name is the slice number ("-0", "-1", etc). 
+    // There may be more than one selected slice
+
+    for (var i = 0; i < sliceName.length; i++) {
+        var classNames = $(sliceName[i]).attr("class").split(" ");
+        pieSlices = pieSlices.concat(classNames[1]);
+    }
+
+    el.innerHTML = pieSlices;
+
+
+    var selections = [];
+
+    var locations = [];
+    var labels = "";
+
+    var hotelLabels = "ACQ";
+    var hotelLocations = [
+
+        // A = Hotel Verde
+        { lat: -33.97415, lng: 18.589582917 },
+
+        // C = Quayside Hotel, Simonstown
+        { lat: -34.1928743, lng: 18.430560817 },
+
+        // Q = Protea Hotel by Marriott
+        { lat: -26.1486465, lng: 27.922543617 }
+
+    ];
+
+    var lodgesLabels = "GIP";
+    var lodgesLocations = [
+
+        // G = Knysna Elephant Park
+        { lat: -34.0385536, lng: 23.26503617 },
+
+        // I = Milkwood Manor
+        { lat: -34.050294, lng: 23.373779317 },
+
+        // P = Glen Afric
+        { lat: -25.8135641, lng: 27.869428517 }
+
+    ];
+
+    var restCampLabels = "LN";
+
+    var restCampLocations = [
+
+        // L = Skepboom Tented Camp
+        { lat: -33.5125013, lng: 25.751274517 },
+
+        // N = Lower Sabie Rest Camp
+        { lat: -25.11986, lng: 31.913190317 }
+    ];
+
+    for (var i = 0; i < pieSlices.length; i++) {
+        if (pieSlices[i] == "_0") {
+
+            locations = locations.concat(hotelLocations);
+            labels = labels.concat(hotelLabels);
+        }
+
+        if (pieSlices[i] == "_1") {
+
+            locations = locations.concat(lodgesLocations);
+            labels = labels.concat(lodgesLabels);
+
+        }
+
+        if (pieSlices[i] == "_2") {
+
+            locations = locations.concat(restCampLocations);
+            labels = labels.concat(restCampLabels);
+
+        }
+    }
+    
+    el.innerHTML = labels;
+    
+    showOnMap(labels, locations);
+
+    
+
 
 });

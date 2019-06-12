@@ -105,9 +105,41 @@ function initMap() {
     var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
 
-// Show Lodgings only
+// --------------------------  Map function to display selected items 
 
-function lodgingsMap() {
+function showOnMap(labels, locations) {
+    console.log("in showOnMap");
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 5,
+        center: {
+
+            //Hotel Verde  
+            lat: -33.97415,
+            lng: 18.589582917
+
+
+        }
+    });
+    var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+        });
+    });
+
+    var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+}
+
+
+
+
+
+//                      Show Lodgings only
+// Show Hotels
+
+/*
+
+function hotelsMap() {
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 7,
         center: {
@@ -159,7 +191,111 @@ function lodgingsMap() {
     var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
 
+// Show Lodges
 
+function lodgesMap() {
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 7,
+        center: {
 
+            //Garden Route National Park       
+            lat: -33.834548,
+            lng: 22.8934339
 
+        }
+    });
 
+    var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    var locations = [
+
+        // A = Hotel Verde
+        { lat: -33.97415, lng: 18.589582917 },
+
+        // C = Quayside Hotel, Simonstown
+        { lat: -34.1928743, lng: 18.430560817 },
+
+        // G = Knysna Elephant Park
+        { lat: -34.0385536, lng: 23.26503617 },
+
+        // I = Milkwood Manor
+        { lat: -34.050294, lng: 23.373779317 },
+
+        // L = Skepboom Tented Camp
+        { lat: -33.5125013, lng: 25.751274517 },
+
+        // N = Lower Sabie Rest Camp
+        { lat: -25.11986, lng: 31.913190317 },
+
+        // P = Glen Afric
+        { lat: -25.8135641, lng: 27.869428517 },
+
+        // Q = Protea Hotel by Marriott
+        { lat: -26.1486465, lng: 27.922543617 },
+
+    ];
+
+    var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+        });
+    });
+
+    var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+}
+
+// Show Rest Camps
+
+function restCampsMap() {
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 7,
+        center: {
+
+            //Garden Route National Park       
+            lat: -33.834548,
+            lng: 22.8934339
+
+        }
+    });
+
+    var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    var locations = [
+
+        // A = Hotel Verde
+        { lat: -33.97415, lng: 18.589582917 },
+
+        // C = Quayside Hotel, Simonstown
+        { lat: -34.1928743, lng: 18.430560817 },
+
+        // G = Knysna Elephant Park
+        { lat: -34.0385536, lng: 23.26503617 },
+
+        // I = Milkwood Manor
+        { lat: -34.050294, lng: 23.373779317 },
+
+        // L = Skepboom Tented Camp
+        { lat: -33.5125013, lng: 25.751274517 },
+
+        // N = Lower Sabie Rest Camp
+        { lat: -25.11986, lng: 31.913190317 },
+
+        // P = Glen Afric
+        { lat: -25.8135641, lng: 27.869428517 },
+
+        // Q = Protea Hotel by Marriott
+        { lat: -26.1486465, lng: 27.922543617 },
+
+    ];
+
+    var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+        });
+    });
+
+    var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+}
+*/
