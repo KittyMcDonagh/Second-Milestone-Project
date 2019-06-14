@@ -104,13 +104,27 @@ function initMap() {
 
 //...............Show specific locations on the map
 
-function showOnMap(mapLoc, mapPos) {
+function showOnMap(mapDetails, mapLocs) {
 
+    var mapMarkers = [];
 
-    var map = new google.maps.Map(document.getElementById("map"), mapLoc);
+    var map = new google.maps.Map(document.getElementById("map"), mapDetails);
 
-    var marker = new google.maps.Marker({
-        position: mapPos
-    });
-    marker.setMap(map);
+    for (i = 0; i < mapLocs.length; i++) {
+
+        mapMarkers[i] = new google.maps.Marker({
+            position: mapLocs[i],
+            animation: google.maps.Animation.DROP
+        });
+
+        // Add a listener to the marker and zoom in when clicked
+        // "this" is the marker that was clicked
+
+        google.maps.event.addListener(mapMarkers[i], 'click', function() {
+            map.setZoom(15);
+            map.setCenter(this.getPosition());
+        });
+        mapMarkers[i].setMap(map);
+    }
 }
+

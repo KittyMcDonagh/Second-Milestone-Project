@@ -61,14 +61,13 @@ $(document).ready(function() {
         dc.renderAll();
     }
 
-
+    // If the Overall Trip piechart is clicked on, reset the map and all piecharts:
     $("#overall-trip-chart").click(function() {
+
         queue()
             .defer(d3.json, "/assets/data/sa-original.json")
             .await(makeGraphs);
-
         initMap();
-
     });
 
     $("#lodging-types-chart").click(function() {
@@ -77,13 +76,13 @@ $(document).ready(function() {
 
         var el = document.getElementById("show-lodgings");
 
-        // Get the selected pieces of the pie that are selected
+        // Get the pieces of the pie that are selected - the class "selected will have been added to the pie slice element"
 
         var sliceName = $(".pie-slice-group").children(".selected");
 
         var pieSlices = [];
 
-        // The second class name is the slice number ("-0", "-1", etc). 
+        // The second class name of the pie slice element is the slice number ("-0", "-1", etc). 
         // There may be more than one selected slice
 
         for (var i = 0; i < sliceName.length; i++) {
@@ -93,11 +92,10 @@ $(document).ready(function() {
 
         el.innerHTML = pieSlices;
 
-
         var selections = [];
+        var mapLocs = [];
+        var mapLabels = "";
 
-        var locations = [];
-        var labels = "";
 
         var hotelLabels = "ACQ";
         var hotelLocations = [
@@ -138,42 +136,44 @@ $(document).ready(function() {
             { lat: -25.11986, lng: 31.913190317 }
         ];
 
+        
+        
         for (var i = 0; i < pieSlices.length; i++) {
             if (pieSlices[i] == "_0") {
 
-                locations = locations.concat(hotelLocations);
-                labels = labels.concat(hotelLabels);
+                mapLocs = mapLocs.concat(hotelLocations);
+                mapLabels = mapLabels.concat(hotelLabels);
             }
 
             if (pieSlices[i] == "_1") {
 
-                locations = locations.concat(lodgesLocations);
-                labels = labels.concat(lodgesLabels);
+                mapLocs = mapLocs.concat(lodgesLocations);
+                mapLabels = mapLabels.concat(lodgesLabels);
 
             }
 
             if (pieSlices[i] == "_2") {
 
-                locations = locations.concat(restCampLocations);
-                labels = labels.concat(restCampLabels);
+                mapLocs = mapLocs.concat(restCampLocations);
+                mapLabels = mapLabels.concat(restCampLabels);
 
             }
         }
 
-        el.innerHTML = labels;
+        el.innerHTML = mapLabels;
 
         // A = Hotel Verde
 
-        var mapLoc = {
-          center: {lat: -33.97415, lng: 18.589582917},
-          zoom: 10
+        var mapDetails = {
+            center: { lat: -33.97415, lng: 18.589582917 },
+            zoom: 5
         };
-        
-        var mapPos = { lat: -33.97415, lng: 18.589582917 };
+
+        //        var mapPos = { lat: -33.97415, lng: 18.589582917 };            
 
         // The following function is in maps.js. It shows the selected locations on the Map.
 
-        showOnMap(mapLoc, mapPos);
+        showOnMap(mapDetails, mapLocs);
 
         var el_lodgings = document.getElementById("show-lodgings");
 
