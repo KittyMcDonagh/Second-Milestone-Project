@@ -1,5 +1,7 @@
 // Initial load of Google Maps. Show markers for everything
 
+var mapMarkers = [];
+
 function initMap() {
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 7,
@@ -43,7 +45,7 @@ function initMap() {
         // I = Milkwood Manor
         { lat: -34.050294, lng: 23.373779317 },
 
-        // J = Nature' Valley
+        // J = Nature's Valley
         { lat: -33.9782911, lng: 23.547230515 },
 
         // K = Port Elizabeth
@@ -89,6 +91,7 @@ function initMap() {
         { lat: -26.1452546, lng: 27.967363217 }
     ];
 
+
     // This function returns all the markers into "markers" which is passed to MarkerClusterer to be clustered
 
     var markers = locations.map(function(location, i) {
@@ -99,32 +102,67 @@ function initMap() {
     });
 
     var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+
 }
 
 
 //...............Show specific locations on the map
 
-function showOnMap(mapDetails, mapLocs) {
+function showOnMap(mapDetails, mapLocs, mapLabels) {
 
-    var mapMarkers = [];
+    console.log(mapDetails);
+    console.log(mapLocs);
+    console.log(mapLabels);
+
 
     var map = new google.maps.Map(document.getElementById("map"), mapDetails);
 
     for (i = 0; i < mapLocs.length; i++) {
 
+        var mapMarkers = mapLocs.map(function(location, i) {
+            return new google.maps.Marker({
+                position: location,
+                label: mapLabels[i % mapLabels.length]
+            });
+        });
+
+
         mapMarkers[i] = new google.maps.Marker({
             position: mapLocs[i],
             animation: google.maps.Animation.DROP
+
         });
 
         // Add a listener to the marker and zoom in when clicked
         // "this" is the marker that was clicked
 
         google.maps.event.addListener(mapMarkers[i], 'click', function() {
-            map.setZoom(15);
+            map.setZoom(16);
             map.setCenter(this.getPosition());
         });
         mapMarkers[i].setMap(map);
     }
 }
 
+
+
+//
+
+/*
+google.maps.event.addListener(map, 'click', function(event) {
+    placeMarker(map, event.latLng);
+});
+
+
+
+function placeMarker(map, location) {
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map
+    });
+    var infowindow = new google.maps.InfoWindow({
+        content: 'Latitude: ' + location.lat() +
+            '<br>Longitude: ' + location.lng()
+    });
+    infowindow.open(map, marker);
+} */

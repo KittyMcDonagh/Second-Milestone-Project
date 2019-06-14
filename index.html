@@ -4,7 +4,7 @@
 <head>
 
 
-
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9WcAVvxLiqeFJzcPccc9tSo0utW9BAIk&libraries=places&callback=initMap"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -33,7 +33,7 @@
 
     <section class="container-fluid p-0">
 
-        <!-- Show welcome message at the top of the page -->
+        <!-- Show welcome message at the top of the page and background photo -->
         <header>
             <div class="row no-gutters">
                 <div class="col-12 p-0">
@@ -43,6 +43,10 @@
                     </p>
                 </div>
             </div>
+
+            <div class="row no-gutters">
+                <div class="col-12 bg-photo"></div>
+            </div>
         </header>
 
         <!-- First section shows overall Piechart and the Map -->
@@ -51,93 +55,54 @@
 
             <!-- Display Piechart showing all details of the trip -->
 
-            <div class="col-12 col-md-3 p-0 box-style text-center">
+            <div class="col-12 col-lg-3 p-0 chart-box-style text-center">
                 <div>
                     <p class="p-style"><em>Overall Trip</em> - Click on this chart to reset all</p>
                 </div>
-
                 <div class="chart" id="overall-trip-chart"></div>
-
             </div>
 
-            <!-- Display the Map here. The above Piechart will indicate what is shown on the map -->
-
-            <div class="col-12 col-md-9 box-style">
-                <div style="display: none">
-                    <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
-                </div>
-                <div id="map"></div>
-
-                <!-- copied from Placefinder -->
-
-                <div id="infowindow-content">
-                    <span id="place-name" class="title"></span><br>
-                    <strong>Place ID:</strong> <span id="place-id"></span><br>
-                    <span id="place-address"></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Second section shows the types of lodgings stayed in and the details of these when selected -->
-
-        <div class="row no-gutters">
-
+            <!-- Second section shows the types of lodgings stayed in and the details of these when selected -->
             <!-- Display Piechart showing the types of lodgings stayed in -->
 
-            <div class="col-12 col-md-3 p-0 box-style text-center text-style">
+            <!--            <div class="col-12 col-lg-3 p-0 chart-box-style text-center text-style">
                 <div>
                     <p class="p-style"><em>Lodgings</em> - Click on the Types</p>
                 </div>
                 <div class="chart" id="lodging-types-chart"></div>
-            </div>
+            </div> -->
 
-            <!-- Display details of the types of lodgings stayed in. The above Piechart will indicate the type -->
-
-            <div class="col-12 col-md-9 box-style">
-                <div id="show-lodgings"></div>
-            </div>
-
-        </div>
-
-        <!-- Third section shows the types of Safaris and the details of these when selected -->
-
-        <div class="row no-gutters">
-
+            <!-- Third section shows the types of Safaris and the details of these when selected -->
             <!-- Display Piechart showing the types of Safaris -->
 
-            <div class="col-12 col-md-3 p-0 box-style text-center text-style">
+            <!--          <div class="col-12 col-lg-3 p-0 chart-box-style text-center text-style">
                 <div>
                     <p class="p-style"><em>Safari</em> - Click on the Animals</p>
                 </div>
                 <div class="chart" id="safari-chart"></div>
-            </div>
+            </div> -->
 
-            <!-- Display details of the types of Safaris. The above Piechart will indicate the type shown -->
+            <!-- Fourth section shows the types of Sightseeing and the details of these when selected -->
 
-            <div class="col-12 col-md-9 box-style">
-                <div id="show-safaris"></div>
-            </div>
-        </div>
-
-
-        <!-- Fourth section shows the types of Sightseeing and the details of these when selected -->
-
-        <div class="row no-gutters">
-
-            <div class="col-12 col-md-3 p-0 box-style text-center text-style">
+            <!--          <div class="col-12 col-lg-3 p-0 chart-box-style text-center text-style">
                 <div>
                     <p class="p-style"><em>Sightseeing</em> - Click on the Types</p>
                 </div>
                 <div class="chart" id="sightseeing-chart"></div>
-            </div>
-
-            <!-- Display details of the types of Sightseeing. The above Piechart will indicate the type shown -->
-
-            <div class="col-12 col-md-9 box-style">
-                <div id="show-sightseeing"></div>
-            </div>
+            </div>  -->
 
         </div>
+
+
+
+        <!-- Display the Map here. The above Piechart will indicate what is shown on the map -->
+
+        <div class="col-12 map-style">
+            <div id="map"></div>
+        </div>
+
+
+
 
         <!-- FOOTER -->
         <footer class="footer-style">
@@ -154,17 +119,17 @@
 
     <!-- Scripts for Google Maps -->
 
-    
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9WcAVvxLiqeFJzcPccc9tSo0utW9BAIk&libraries=places&callback=initMap" async defer ></script>
+
+
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-
+    <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/maps.js"></script>
 
     <!-- Script to create the piechart dashboard -->
 
-    <script src="assets/js/dashboard.js"></script>
+
 
 </body>
 

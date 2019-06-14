@@ -13,9 +13,42 @@
 }
 
 
+.bg-photo {
+    background-position: center;
+    background-image: url("../images/hippo.jpg");
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 480px;
+    border: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
 /* Using a color from Google Maps scheme color (https://www.schemecolor.com/google-maps-colors.php) for background */
 
-.box-style {
+.chart-box-style {
+    /*    background-color: #EDF3FE; */
+    background-color: #fbebe9;
+    border: solid 1px;
+   border-color: #C9DCFB; 
+    color: #0066cc;
+    min-width: 300px;
+    height: 250px;
+}
+
+/* The heading above the chart is pushing the chart down. Move it up 20 pixels */
+
+.chart {
+    position: relative;
+    top: -80px;
+}
+
+
+.map-style {
     /*    background-color: #EDF3FE; */
     background-color: #fbebe9;
     border: solid 1px;
@@ -41,12 +74,6 @@
     font-weight: normal;
 }
 
-/* The heading above the chart is pushing the chart down. Move it up 20 pixels */
-
-.chart {
-    position: relative;
-    top: -34px;
-}
 
 .text-style {
     color: #0066cc;
@@ -80,13 +107,7 @@ div#map {
     height: 300px;
 }
 
- #infowindow-content {
-        display: none;
-      }
-      #map #infowindow-content {
-        display: inline;
-      }
-      
+
       
 
 /* Footer details.     */
