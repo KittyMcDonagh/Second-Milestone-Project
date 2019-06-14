@@ -3,7 +3,7 @@
 
 <head>
 
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDHHyac2SiOYPNYxXMK7rqJjnB8nCaaxE&callback=initMap"></script>
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -63,7 +63,18 @@
             <!-- Display the Map here. The above Piechart will indicate what is shown on the map -->
 
             <div class="col-12 col-md-9 box-style">
+                <div style="display: none">
+                    <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+                </div>
                 <div id="map"></div>
+
+                <!-- copied from Placefinder -->
+
+                <div id="infowindow-content">
+                    <span id="place-name" class="title"></span><br>
+                    <strong>Place ID:</strong> <span id="place-id"></span><br>
+                    <span id="place-address"></span>
+                </div>
             </div>
         </div>
 
@@ -143,7 +154,12 @@
 
     <!-- Scripts for Google Maps -->
 
+    
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9WcAVvxLiqeFJzcPccc9tSo0utW9BAIk&libraries=places&callback=initMap" async defer ></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
     <script src="assets/js/maps.js"></script>
 
     <!-- Script to create the piechart dashboard -->

@@ -1,7 +1,8 @@
 /* Colors for welcome banner - background-color: #e7effd; color: #4a89f3;  */
 
 .welcome-style {
-    background-color: #e7effd;
+    /*   background-color: #e7effd; */
+    background-color: #fbebe9;
     color: #4a89f3;
     padding: 15px;
 }
@@ -15,7 +16,8 @@
 /* Using a color from Google Maps scheme color (https://www.schemecolor.com/google-maps-colors.php) for background */
 
 .box-style {
-    background-color: #EDF3FE;
+    /*    background-color: #EDF3FE; */
+    background-color: #fbebe9;
     border: solid 1px;
     border-color: #C9DCFB;
     color: #0066cc;
@@ -31,7 +33,10 @@
     padding-bottom: 5px;
     margin: 0;
     text-align: center;
-    background-color:  #6fa1f6;
+    /*    background-color:  #6fa1f6; */
+    /*    background-color: 	 #08784f; */
+    /*    background-color: #09905e; */
+    background-color: #DD4B3E;
     color: #e7effd;
     font-weight: normal;
 }
@@ -70,11 +75,26 @@ div#map {
     position: relative;
 }
 
+.lodging-style {
+    width: 200px;
+    height: 300px;
+}
+
+ #infowindow-content {
+        display: none;
+      }
+      #map #infowindow-content {
+        display: inline;
+      }
+      
+      
+
 /* Footer details.     */
 
 .footer-style {
     color: #e7effd;
-    background-color: #4a89f3;
+    /*    background-color: #4a89f3; */
+    background-color: #DD4B3E;
     margin-bottom: 0px;
     text-align: center;
 }
