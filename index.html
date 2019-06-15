@@ -38,7 +38,7 @@
             <div class="row no-gutters">
                 <div class="col-12 p-0">
                     <p class="welcome-style mb-0 text-center fixed-top">
-                        Welcome to My South African Trip web page! Click on the circle below to see where I'm going.
+                        Welcome to My South African Trip web page!
                         <span><i class="far fa-grin smile-style"></i></span>
                     </p>
                 </div>
@@ -47,30 +47,29 @@
 
         <!-- Main section contains Filter Piechart, Background Photo, Google Maps -->
 
-        <main class="main-section set-position">
+        <main class="main-section">
 
             <div class="row no-gutters">
 
                 <!-- Display Filter Piechart 3 major sections - Lodgings, Sight Seeing, Safari -->
 
-                <div class="col-12 col-md-4 col-lg-3 col-xl-2 p-0 chart-box-style text-center">
-                    <div class="filter" id="trip-filter"></div>
+                <div class="col-12 col-md-4 col-lg-3 col-xl-2 p-0 chart-box-style text-center set-position">
+                    <!-- This div contain the svg (the filter piechart) -->
+                    <div class="filter-piechart border-style " id="trip-filter"></div>
                 </div>
 
-                <!-- Show background photo -->
-
-                <div class="col-12 col-md-8 col-lg-9 col-xl-10 bg-photo"></div>
-
-            </div>
-
-            <!-- Display the Map here. The above Filter Piechart will indicate what is shown on the map -->
-
-            <div class="row no-gutters">
-                <div class="col-12 map-style">
+                <!-- Display the Map here. The above Filter Piechart will indicate what is shown on the map -->
+                <div class="col-12 col-md-8 col-lg-9 col-xl-10 border-style map-style set-position">
                     <div id="map"></div>
                 </div>
+
             </div>
 
+            <!-- Show background photo -->
+
+            <div class="row no-gutters">
+                <div class="col-12 bg-photo set-position"></div>
+            </div>
 
         </main>
 

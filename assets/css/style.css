@@ -12,18 +12,9 @@
     font-size: 16px;
 }
 
-.main-section {
-    background-color: #e7f0fe;
-    border: solid 1px #C9DCFB;
-    
-}
+.main-section {}
 
-@media(min-height:800px) {
-    .main-section {
-        height: calc(100vh - 110px);
-        
-    }
-}
+
 
 
 .set-position {
@@ -35,8 +26,6 @@
     The footer is 184px in height. 80px is added for the fixed header. 
     Extra padding is added to the top of the screen on taller screens, to centralise the contact boxes  */
 
-
-
 .bg-photo {
     background-position: center;
     background-image: url("../images/hippo.jpg");
@@ -44,13 +33,24 @@
     -webkit-background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 270px;
+    height: 360px;
     border: 0;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border: solid 1px;
-    border-color: #C9DCFB;
+    min-height: 540px;
+}
+
+@media(min-height:800px) {
+    .bg-photo {
+        height: calc(100vh - 469px);
+
+    }
+}
+
+.border-style {
+    /* border: solid 1px #4285F4; */
+    /*  border: solid 1px #87b2f8; */
 }
 
 /* I am using the Google Maps logo colors from https://brandpalettes.com/google-colors/) for background as starting colors */
@@ -58,11 +58,9 @@
 /* and makeing them a few shades lighter using the color picker (https://www.w3schools.com/colors/colors_picker.asp) */
 
 .chart-box-style {
-    background-color: #e8fdf3;
-    border: solid 1px;
-    border-color: #C9DCFB;
+    background-color: #cfe0fc;
     color: #0066cc;
-    height: 270px;
+    height: 360px;
 }
 
 .dc-chart {
@@ -70,26 +68,22 @@
 }
 
 svg {
-    height: 270px;
+    height: 360px;
     width: 100%;
+    position: relative;
+
 }
 
 /* The heading above the chart is pushing the chart down. Move it up 20 pixels */
 
-.filter {
+.filter-piechart {
     position: relative;
-    top: -50px;
-
-}
-
-
-.map-style {
-    border: solid 1px;
-    border-color: #C9DCFB;
-    color: #0066cc;
 
 
 }
+
+
+.map-style {}
 
 /* P-style - background color: #6fa1f6; / color: #e7effd; */
 
@@ -117,7 +111,8 @@ svg {
 div#map {
     max-width: 100%;
     position: relative;
-    height: calc(100vh - 216px);
+    /*   height: calc(100vh - 216px); */
+    height: 360px;
 }
 
 .lodging-style {
