@@ -33,11 +33,11 @@
 
     <section class="container-fluid p-0">
 
-        <!-- Show welcome message at the top of the page and background photo -->
+        <!-- Show welcome message at the top of the page. This is fixed -->
         <header>
             <div class="row no-gutters">
                 <div class="col-12 p-0">
-                    <p class="welcome-style mb-0 text-center">
+                    <p class="welcome-style mb-0 text-center fixed-top">
                         Welcome to My South African Trip web page! Click on the circle below to see where I'm going.
                         <span><i class="far fa-grin smile-style"></i></span>
                     </p>
@@ -45,88 +45,43 @@
             </div>
         </header>
 
-        <main>
+        <!-- Main section contains Filter Piechart, Background Photo, Google Maps -->
 
-            <!-- Top section of screen shows the Filter Piechart and the Map -->
+        <main class="main-section set-position">
 
             <div class="row no-gutters">
 
                 <!-- Display Filter Piechart 3 major sections - Lodgings, Sight Seeing, Safari -->
 
                 <div class="col-12 col-md-4 col-lg-3 col-xl-2 p-0 chart-box-style text-center">
-                    <!--
-                    <div>
-                        <p class="p-style"><em>Filter</em></p>
-                    </div> -->
                     <div class="filter" id="trip-filter"></div>
                 </div>
 
+                <!-- Show background photo -->
 
                 <div class="col-12 col-md-8 col-lg-9 col-xl-10 bg-photo"></div>
 
             </div>
 
-
-
+            <!-- Display the Map here. The above Filter Piechart will indicate what is shown on the map -->
 
             <div class="row no-gutters">
-
-
-                <!-- Display the Map here. The above Piechart will indicate what is shown on the map -->
-
                 <div class="col-12 map-style">
                     <div id="map"></div>
                 </div>
-
-                <!-- Second section shows the types of lodgings stayed in and the details of these when selected -->
-                <!-- Display Piechart showing the types of lodgings stayed in -->
-
-                <!--            <div class="col-12 col-lg-3 p-0 chart-box-style text-center text-style">
-                <div>
-                    <p class="p-style"><em>Lodgings</em> - Click on the Types</p>
-                </div>
-                <div class="chart" id="lodging-types-chart"></div>
-            </div> -->
-
-                <!-- Third section shows the types of Safaris and the details of these when selected -->
-                <!-- Display Piechart showing the types of Safaris -->
-
-                <!--          <div class="col-12 col-lg-3 p-0 chart-box-style text-center text-style">
-                <div>
-                    <p class="p-style"><em>Safari</em> - Click on the Animals</p>
-                </div>
-                <div class="chart" id="safari-chart"></div>
-            </div> -->
-
-                <!-- Fourth section shows the types of Sightseeing and the details of these when selected -->
-
-                <!--          <div class="col-12 col-lg-3 p-0 chart-box-style text-center text-style">
-                <div>
-                    <p class="p-style"><em>Sightseeing</em> - Click on the Types</p>
-                </div>
-                <div class="chart" id="sightseeing-chart"></div>
-            </div>  -->
-
             </div>
 
 
-
-
-
-
-
-
-            <!-- FOOTER -->
-            <footer class="footer-style">
-                <div class="row no-gutters">
-                    <div class="col p-0">
-                        <p class="footer-padding">My South African Trip</p>
-                    </div>
-                </div>
-
-
-            </footer>
         </main>
+
+        <!-- FOOTER -->
+        <footer class="footer-style set-position">
+            <div class="row no-gutters">
+                <div class="col p-0">
+                    <p class="footer-padding">My South African Trip</p>
+                </div>
+            </div>
+        </footer>
 
     </section>
 
