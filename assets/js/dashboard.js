@@ -16,7 +16,7 @@ $(document).ready(function() {
 
         var highlights_dim = ndx.dimension(dc.pluck('activities'));
         var total_days_per_highlight = highlights_dim.group().reduceSum(dc.pluck('both_count'));
-        dc.pieChart('#overall-trip-chart')
+        dc.pieChart('#trip-filter')
             .height(360)
             .radius(90)
             .transitionDuration(1500)
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
     // --- If the Overall Trip piechart is clicked on, reset the map and all piecharts:
 
-    $("#overall-trip-chart").click(function() {
+    $("#trip-filter").click(function() {
 
         /* 
                 queue()

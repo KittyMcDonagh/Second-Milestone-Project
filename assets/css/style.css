@@ -2,14 +2,29 @@
 
 .welcome-style {
     /*   background-color: #e7effd; */
-    background-color: #fbebe9;
-    color: #4a89f3;
+    background-color: #DD4B3E;
+    color: #e7effd;
     padding: 15px;
 }
+
 
 .smile-style {
     color: #0066cc;
     font-size: 16px;
+}
+
+.main-section {
+    border: solid #999999;
+}
+
+/* To make that on taller screens, the footer on the contact page always be at the bottom of the screen.
+    The footer is 184px in height. 80px is added for the fixed header. 
+    Extra padding is added to the top of the screen on taller screens, to centralise the contact boxes  */
+
+@media(min-height:800px) {
+    .main-section {
+        height: calc(100vh);
+    }
 }
 
 
@@ -20,31 +35,42 @@
     -webkit-background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    min-height: 480px;
+    height: 270px;
     border: 0;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
+    border: solid 1px;
+    border-color: #C9DCFB;
 }
 
-/* Using a color from Google Maps scheme color (https://www.schemecolor.com/google-maps-colors.php) for background */
+/* I am using the Google Maps logo colors from https://brandpalettes.com/google-colors/) for background as starting colors */
+
+/* and makeing them a few shades lighter using the color picker (https://www.w3schools.com/colors/colors_picker.asp) */
 
 .chart-box-style {
-    /*    background-color: #EDF3FE; */
-    background-color: #fbebe9;
+    background-color: #e8fdf3;
     border: solid 1px;
-   border-color: #C9DCFB; 
+    border-color: #C9DCFB;
     color: #0066cc;
-    min-width: 300px;
-    height: 250px;
+    height: 270px;
+}
+
+.dc-chart {
+    width:100%;
+}
+
+svg {
+    height: 270px;
+    width: 100%;
 }
 
 /* The heading above the chart is pushing the chart down. Move it up 20 pixels */
 
-.chart {
+.filter {
     position: relative;
-    top: -80px;
+    top: -50px;
+
 }
 
 
@@ -69,7 +95,7 @@
     /*    background-color:  #6fa1f6; */
     /*    background-color: 	 #08784f; */
     /*    background-color: #09905e; */
-    background-color: #DD4B3E;
+    background-color: #4285F4;
     color: #e7effd;
     font-weight: normal;
 }
@@ -108,7 +134,7 @@ div#map {
 }
 
 
-      
+
 
 /* Footer details.     */
 
