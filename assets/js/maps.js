@@ -7,9 +7,11 @@ function initMap() {
         zoom: 7,
         center: {
 
-            //Garden Route National Park       
-            lat: -33.834548,
-            lng: 22.8934339
+            // Knysna Elephant Park coordinates
+            lat: -34.0385536,
+            lng: 23.26503617
+
+
 
         }
     });
@@ -144,14 +146,78 @@ function showOnMap(mapDetails, mapLocs, mapLabels) {
     }
 }
 
+/*
+
+    // If SAFARI is clicked . . .
+
+    $("#safari-link").click(function() {
+
+        queue()
+            .defer(d3.json, "/assets/data/sa-original.json")
+            .await(safariGraphs);
+
+        function safariGraphs(error, transactionsData) {
+
+            console.log("safarisGraphs");
+
+            var ndx = crossfilter(transactionsData);
+
+            // Render the Safari Types Chart . . .
+
+            var safari_dim = ndx.dimension(dc.pluck('activities'));
+            var total_per_safari = safari_dim.group().reduceSum(dc.pluck('safari_count'));
+            dc.pieChart('#trip-filter')
+                .height(400)
+                .radius(90)
+                .transitionDuration(1500)
+                .dimension(safaris_dim)
+                .group(total_per_safari);
+        }
+        dc.renderAll()
+
+    });
+
+
+
+    // If SIGHT SEEING is clicked . . .
+
+    $("#sightseeing-link").click(function() {
+
+        queue()
+            .defer(d3.json, "/assets/data/sa-original.json")
+            .await(sightseeingGraphs);
+
+        function sightseeingGraphs(error, transactionsData) {
+
+            console.log("sightseeingsGraphs");
+
+            var ndx = crossfilter(transactionsData);
+
+            /// Sightseeing - showing Elephants, Cheetahs, Lions, the Big 5
+            // When this piechart is clicked on it will clear all information displayed and display only whats selected on this chart
+
+            var sightsee_dim = ndx.dimension(dc.pluck('type'));
+            var total_per_sightsee = sightsee_dim.group().reduceSum(dc.pluck('sight_see_count'));
+            dc.pieChart('#trip-filter')
+                .height(360)
+                .radius(90)
+                .transitionDuration(1500)
+                .dimension(sightsee_dim)
+                .group(total_per_sightsee);
+        }
+        dc.renderAll();
+    });
+
+
 
 
 //
 
-/*
+
 google.maps.event.addListener(map, 'click', function(event) {
     placeMarker(map, event.latLng);
 });
+
 
 
 

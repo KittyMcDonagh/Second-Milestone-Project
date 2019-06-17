@@ -1,16 +1,84 @@
 /* Colors for welcome banner - background-color: #e7effd; color: #4a89f3;  */
 
-.welcome-style {
-    background-color: #DD4B3E;
-    color: #e7effd;
-    padding: 15px;
+.navbar-style {
+    background-color: #db4437;
+    color: #e7f0fe;
+    font-size: 18px;
+}
+
+.menu-padding {
+    padding-left: 100px;
+}
+
+/*    Home icon in navigation bar  */
+
+.home-icon a i {
+    display: block;
+    color: #0d5bd9;
+    font-size: 26px;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.home-icon a i:hover {
+    color: #f4b400;
+}
+
+/* The links in the navigation bar */
+
+.menu-nav-links a {
+    width: 100%;
+    text-decoration: none;
+    color: #e7f0fe !important;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+}
+
+.menu-nav-links a:hover {
+    background-color: #f4b400;
+}
+
+/* This class will have  the same color for text and bg initially. 
+   I will add "user-message-style-bg" when fading in the message  */
+
+.user-message-style {
+    background-color: #e7f0fe;
+    color: #e7f0fe;
+    font-size: 18px;
+    font-style: italic;
+    padding:5px;
+}
+
+.user-message-style-bg {
+    background-color: #0d5bd9;
+    
 }
 
 
-.smile-style {
-    color: #0066cc;
-    font-size: 16px;
+.highlight {
+    background-color: pink;
 }
+
+
+.logo {
+    background: url("../images/dublintocapetown-logo.jpg");
+    min-height: 64px;
+    min-width: 150px;
+    border-style: outset;
+    border-width: 1px;
+    border-color: #9fc1f9;
+    background-position: bottom;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
 
 .main-section {}
 
@@ -19,7 +87,7 @@
 
 .set-position {
     position: relative;
-    top: 54px;
+    top: 80px;
 }
 
 /* To make that on taller screens, the footer on the contact page always be at the bottom of the screen.
@@ -33,12 +101,11 @@
     -webkit-background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 360px;
-    border: 0;
+    min-height: 500px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    min-height: 540px;
+    
 }
 
 @media(min-height:800px) {
@@ -48,9 +115,9 @@
     }
 }
 
-.border-style {
-    /* border: solid 1px #4285F4; */
-    /*  border: solid 1px #87b2f8; */
+.border-setting {
+    border: solid 1px #87b2f8;
+
 }
 
 /* I am using the Google Maps logo colors from https://brandpalettes.com/google-colors/) for background as starting colors */
@@ -58,9 +125,9 @@
 /* and makeing them a few shades lighter using the color picker (https://www.w3schools.com/colors/colors_picker.asp) */
 
 .chart-box-style {
-    background-color: #cfe0fc;
+    background-color: #e7f0fe;
     color: #0066cc;
-    height: 360px;
+    height: 500px;
 }
 
 .dc-chart {
@@ -68,22 +135,31 @@
 }
 
 svg {
-    height: 360px;
+    height: 470px;
     width: 100%;
     position: relative;
+ /*   border: solid 1px #87b2f8; */
 
 }
 
 /* The heading above the chart is pushing the chart down. Move it up 20 pixels */
 
-.filter-piechart {
+.filter-heading-style  {
     position: relative;
+    color: #e7f0fe;
+    margin:0px;
+    opacity: 1;
+    font-style: italic;
+    font-weight: Bold;
+    padding:3px 0;
 
 
 }
 
 
-.map-style {}
+.map-style {
+    border-left: solid 1px #87b2f8; 
+}
 
 /* P-style - background color: #6fa1f6; / color: #e7effd; */
 
@@ -112,7 +188,7 @@ div#map {
     max-width: 100%;
     position: relative;
     /*   height: calc(100vh - 216px); */
-    height: 360px;
+    height: 500px;
 }
 
 .lodging-style {
