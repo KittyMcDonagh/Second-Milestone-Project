@@ -5,18 +5,17 @@
 
     function initMap() {
         var map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 7,
+            zoom: 5,
             center: {
 
-                // Knysna Elephant Park coordinates
-                lat: -34.0385536,
-                lng: 23.26503617
-
+                // Center on Glen Afric
+                lat: -25.8135641, 
+                lng: 27.869428517 
             }
+            
         });
 
         var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
         var locations = [
 
             // A = Hotel Verde
@@ -70,26 +69,21 @@
             // Q = Protea Hotel by Marriott
             { lat: -26.1486465, lng: 27.922543617 },
 
-            // R = Soweto
-            { lat: -26.2438785, lng: 27.768230212 },
-
-            // S = Lion and Safari Park
+            // R = Lion and Safari Park
             { lat: -25.8324043, lng: 27.88659517 },
 
-            // T = de Wildt Cheetah Sanctuary
+            // S = de Wildt Cheetah Sanctuary
             { lat: -25.6736889, lng: 27.921508817 },
 
-            // U = Zulu Nyala Country Manor
+            // T = Zulu Nyala Country Manor
             { lat: -25.9916381, lng: 27.97380617 },
 
-            // V = Johannesburg
+            // U = Johannesburg
             { lat: -26.1715046, lng: 27.969983412 },
 
-            // W = Ukutula Lodge and Game Reserve
+            // V = Ukutula Lodge and Game Reserve
             { lat: -25.5219364, lng: 27.67158617 },
 
-            // x = Northcliff Ridge Eco Park
-            { lat: -26.1452546, lng: 27.967363217 }
         ];
 
 
@@ -118,10 +112,6 @@
 
         var map = new google.maps.Map(document.getElementById("map"), mapDetails);
 
-        var infoWindow = new google.maps.InfoWindow({
-            content: "Howzit going Kitty?"
-        });
-
         for (i = 0; i < mapLocs.length; i++) {
 
             var mapMarkers = mapLocs.map(function(location, i) {
@@ -129,13 +119,14 @@
                     position: location,
                     label: mapLabels[i % mapLabels.length]
                 });
+                mapMarkers[i] = new google.maps.Marker({
+                    position: mapLocs[i],
+                    animation: google.maps.Animation.DROP
+                });
             });
 
 
-            mapMarkers[i] = new google.maps.Marker({
-                position: mapLocs[i],
-                animation: google.maps.Animation.DROP
-            });
+
 
             // Add a listener to the marker and zoom in when clicked
             // "this" is the marker that was clicked
@@ -168,4 +159,4 @@
             });
 
     }
-
+    

@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-    $("#user-message").html("Click on a menu item and the filter will appear here.").hide();
+    $("#user-message").html("<p>Select <strong>Lodgings, Safari,</strong> or <strong>Sight Seeing</strong> from the above menu.</p>").hide();
+    $("#user-message").append("<p>A <strong>filter</strong> will appear here. Use it to filter the details on the Map and the Gallery.</p>").hide();
+    $("#user-message").append("<p>Select <strong>Gallery</strong> to see the photos below.</p>").hide();
+    $("#user-message").append("<p>Select <strong>Home</strong> to start again.</p>").hide();
     $("#user-message").addClass("user-message-style-bg");
     $("#user-message").fadeTo(7000, .7);
-    
-    
-    
 
     // If LODGINGS is clicked . . .
 
@@ -14,9 +14,62 @@ $(document).ready(function() {
         // Hide the user message
         $("#user-message").removeClass("user-message-style").hide();
 
+        // Lodgings selected. Hide the Gallery details for Safari and Sightseeing
+        // But first make sure Lodgings is showing
+
+        $(".lodgings").show();
+
+        $(".safari").hide();
+        $(".sightseeing").hide();
+
+
+        var mapLabels = "ACGILNPQ";
+        var mapLocs = [
+
+            // A = Hotel Verde
+            { lat: -33.97415, lng: 18.589582917 },
+
+            // C = Quayside Hotel, Simonstown
+            { lat: -34.1928743, lng: 18.430560817 },
+
+            // G = Knysna Elephant Park Lodge
+            { lat: -34.0385536, lng: 23.26503617 },
+
+            // I = Milkwood Manor
+            { lat: -34.050294, lng: 23.373779317 },
+
+            // L = Spekboom Tented Camp
+            { lat: -33.5125013, lng: 25.751274517 },
+
+            // N = Lower Sabie Rest Camp
+            { lat: -25.11986, lng: 31.913190317 },
+
+            // P = Glen Afric
+            { lat: -25.8135641, lng: 27.869428517 },
+
+            // Q = Protea Hotel by Marriott
+            { lat: -26.1486465, lng: 27.922543617 },
+        ];
+
+        var mapDetails = {
+            // Center on Glen Afric
+            center: { lat: -25.8135641, lng: 27.869428517 },
+            zoom: 5
+        };
+
+        // The following function is in maps.js. It shows the selected locations on the Map.
+
+        console.log("mapLocs = " + mapLocs);
+        console.log("mapLabels = " + mapLabels);
+
+        showOnMap(mapDetails, mapLocs, mapLabels);
+
+
+
         // Show the filter heading
         $("#user-message").addClass("filter-heading-style")
         $("#user-message").html("Lodgings Filter").show();
+        $("#user-message-2").html("Click on a Slice to Filter")
 
         queue()
             .defer(d3.json, "/assets/data/sa-original.json")
@@ -43,6 +96,56 @@ $(document).ready(function() {
 
         // Hide the user message
         $("#user-message").removeClass("user-message-style").hide();
+
+        // Safari selected. Hide the Gallery details for Lodgings and Sightseeing
+        // But first make sure Safari is showing
+
+        $(".safari").show();
+
+        $(".lodgings").hide();
+        $(".sightseeing").hide();
+
+        var mapLabels = "GMOPRSTV";
+        var mapLocs = [
+
+            // G = Knysna Elephant Park
+            { lat: -34.0385536, lng: 23.26503617 },
+
+            // M = Addo Elephant National Park
+            { lat: -33.4833333, lng: 25.747811317 },
+
+            // O = Kruger National Park
+            { lat: -23.9883848, lng: 31.552551517 },
+
+            // P = Glen Afric
+            { lat: -25.8135641, lng: 27.869428517 },
+
+            // R = Lion and Safari Park
+            { lat: -25.8324043, lng: 27.88659517 },
+
+            // S = de Wildt Cheetah Sanctuary
+            { lat: -25.6736889, lng: 27.921508817 },
+
+            // T = Zulu Nyala Country Manor
+            { lat: -25.9916381, lng: 27.97380617 },
+
+            // V = Ukutula Lodge and Game Reserve
+            { lat: -25.5219364, lng: 27.67158617 }
+        ];
+
+        var mapDetails = {
+            // Center on Glen Afric
+            center: { lat: -25.8135641, lng: 27.869428517 },
+            zoom: 5
+        };
+
+        // The following function is in maps.js. It shows the selected locations on the Map.
+
+        console.log("mapLocs = " + mapLocs);
+        console.log("mapLabels = " + mapLabels);
+
+        showOnMap(mapDetails, mapLocs, mapLabels);
+
 
         // Show the filter heading
         $("#user-message").addClass("filter-heading-style")
@@ -74,6 +177,59 @@ $(document).ready(function() {
 
         // Hide the user message
         $("#user-message").removeClass("user-message-style").hide();
+
+        // Sight Seeing selected. Hide the Gallery details for Lodgings and Safari
+        // But first make sure Sight Seeing is showing
+
+        $(".sightseeing").show();
+        
+        $(".lodgings").hide();
+        $(".safari").hide();
+
+        var mapLabels = "BDEFHJKPU";
+        var mapLocs = [
+
+            // B = Chapman's Peak
+            { lat: -34.1007996, lng: 18.358971615 },
+
+            // D = Cape of Good Hope
+            { lat: -34.3567013, lng: 18.470203916 },
+
+            // E = Stellenbosch
+            { lat: -33.9466716, lng: 18.77454512 },
+
+            // F = Marianne Wine Estate
+            { lat: -33.8298546, lng: 18.877630117 },
+
+            // H = Plettenburg Bay
+            { lat: -34.0610681, lng: 23.29123112 },
+
+            // J = Nature's Valley
+            { lat: -33.9782911, lng: 23.547230515 },
+
+            // K = Port Elizabeth
+            { lat: -33.8012478, lng: 25.249983910 },
+
+            // U = Johannesburg
+            { lat: -26.1715046, lng: 27.969983412 }
+
+        ];
+
+        var mapDetails = {
+
+            // Center on Johannesburg
+
+            center: { lat: -26.1715046, lng: 27.969983412 },
+            zoom: 5
+        };
+
+        // The following function is in maps.js. It shows the selected locations on the Map.
+
+        console.log("mapLocs = " + mapLocs);
+        console.log("mapLabels = " + mapLabels);
+
+        showOnMap(mapDetails, mapLocs, mapLabels);
+
 
         // Show the filter heading
         $("#user-message").addClass("filter-heading-style")
@@ -118,6 +274,14 @@ $(document).ready(function() {
 
         if (selectionType === "Lodgings Filter") {
 
+            // Set map center and zoom . . .
+
+            var mapDetails = {
+                // Center on Glen Afric
+                center: { lat: -25.8135641, lng: 27.869428517 },
+                zoom: 5
+            };
+
             // Set the labels and locations for the Lodging Types . . .
 
             var hotelLabels = "ACQ";
@@ -151,7 +315,7 @@ $(document).ready(function() {
             var restCampLabels = "LN";
             var restCampLocations = [
 
-                // L = Skepboom Tented Camp
+                // L = Spekboom Tented Camp
                 { lat: -33.5125013, lng: 25.751274517 },
 
                 // N = Lower Sabie Rest Camp
@@ -175,30 +339,50 @@ $(document).ready(function() {
 
             console.log("pieSlices = " + pieSlices);
 
+            // If nothing is selected, pieSlices will be empty . . .
 
-            for (var i = 0; i < pieSlices.length; i++) {
-                if (pieSlices[i] === "_0") {
+            if (pieSlices.length > 0) {
 
-                    mapLocs = mapLocs.concat(hotelLocations);
-                    mapLabels = mapLabels.concat(hotelLabels);
+                for (var i = 0; i < pieSlices.length; i++) {
+                    if (pieSlices[i] === "_0") {
+
+                        mapLocs = mapLocs.concat(hotelLocations);
+                        mapLabels = mapLabels.concat(hotelLabels);
+                    }
+
+                    if (pieSlices[i] === "_1") {
+
+                        mapLocs = mapLocs.concat(lodgesLocations);
+                        mapLabels = mapLabels.concat(lodgesLabels);
+                    }
+
+                    if (pieSlices[i] === "_2") {
+
+                        mapLocs = mapLocs.concat(restCampLocations);
+                        mapLabels = mapLabels.concat(restCampLabels);
+                    }
                 }
+            }
+            else {
 
-                if (pieSlices[i] === "_1") {
+                // No slices selected, show all lodgings details . . .
 
-                    mapLocs = mapLocs.concat(lodgesLocations);
-                    mapLabels = mapLabels.concat(lodgesLabels);
-                }
+                mapLocs = mapLocs.concat(hotelLocations, lodgesLocations, restCampLocations);
+                mapLabels = mapLabels.concat(hotelLabels, lodgesLabels, restCampLabels);
 
-                if (pieSlices[i] === "_2") {
-
-                    mapLocs = mapLocs.concat(restCampLocations);
-                    mapLabels = mapLabels.concat(restCampLabels);
-                }
             }
         }
 
         // If the Safari Chart is clicked on - - - 
         if (selectionType === "Safari Filter") {
+
+            // Set map center and zoom . . .
+
+            var mapDetails = {
+                // Center on Glen Afric
+                center: { lat: -25.8135641, lng: 27.869428517 },
+                zoom: 5
+            };
 
             // Set the labels and locations for the Safari Types . . .
 
@@ -212,7 +396,7 @@ $(document).ready(function() {
                 { lat: -33.4833333, lng: 25.747811317 }
             ];
 
-            var bigFiveLabels = "OPU";
+            var bigFiveLabels = "OPT";
             var bigFiveLocations = [
 
                 // O = Kruger National Park
@@ -221,25 +405,26 @@ $(document).ready(function() {
                 // P = Glen Afric
                 { lat: -25.8135641, lng: 27.869428517 },
 
-                // U = Zulu Nyala Country Manor
+                // T = Zulu Nyala Country Manor
                 { lat: -25.9916381, lng: 27.97380617 }
             ];
 
-            var lionLabels = "SW";
+            var lionLabels = "RV";
             var lionLocations = [
 
-                // S = Lion and Safari Park
+                // R = Lion and Safari Park
                 { lat: -25.8324043, lng: 27.88659517 },
 
-                // w = Ukutula Lodge and Game Reserve
+                // V = Ukutula Lodge and Game Reserve
                 { lat: -25.5219364, lng: 27.67158617 }
             ];
 
-            var cheetahLabels = "T";
+            var cheetahLabels = "S";
             var cheetahLocations = [
 
-                // T = de Wildt Cheetah Sanctuary
+                // S = de Wildt Cheetah Sanctuary
                 { lat: -25.6736889, lng: 27.921508817 }
+
             ];
 
             // Get the pieces of the pie that are selected.
@@ -256,31 +441,43 @@ $(document).ready(function() {
                 pieSlices = pieSlices.concat(classNames[1]);
             }
 
+            // If everything is deselected, pieSlices will be empty
 
-            for (var i = 0; i < pieSlices.length; i++) {
-                if (pieSlices[i] === "_0") {
+            if (pieSlices.length > 0) {
 
-                    mapLocs = mapLocs.concat(bigFiveLocations);
-                    mapLabels = mapLabels.concat(bigFiveLabels);
+                for (var i = 0; i < pieSlices.length; i++) {
+                    if (pieSlices[i] === "_0") {
+
+                        mapLocs = mapLocs.concat(bigFiveLocations);
+                        mapLabels = mapLabels.concat(bigFiveLabels);
+                    }
+
+                    if (pieSlices[i] === "_1") {
+
+                        mapLocs = mapLocs.concat(lionLocations);
+                        mapLabels = mapLabels.concat(lionLabels);
+                    }
+
+                    if (pieSlices[i] === "_2") {
+
+                        mapLocs = mapLocs.concat(cheetahLocations);
+                        mapLabels = mapLabels.concat(cheetahLabels);
+                    }
+
+                    if (pieSlices[i] === "_3") {
+
+                        mapLocs = mapLocs.concat(elephantLocations);
+                        mapLabels = mapLabels.concat(elephantLabels);
+                    }
                 }
+            }
+            else {
 
-                if (pieSlices[i] === "_1") {
+                // No slices selected, show all safari details . . .
 
-                    mapLocs = mapLocs.concat(lionLocations);
-                    mapLabels = mapLabels.concat(lionLabels);
-                }
+                mapLocs = mapLocs.concat(bigFiveLocations, lionLocations, cheetahLocations, elephantLocations);
+                mapLabels = mapLabels.concat(bigFiveLabels, lionLabels, cheetahLabels, elephantLabels);
 
-                if (pieSlices[i] === "_2") {
-
-                    mapLocs = mapLocs.concat(cheetahLocations);
-                    mapLabels = mapLabels.concat(cheetahLabels);
-                }
-
-                if (pieSlices[i] === "_3") {
-
-                    mapLocs = mapLocs.concat(elephantLocations);
-                    mapLabels = mapLabels.concat(elephantLabels);
-                }
             }
         }
 
@@ -288,9 +485,19 @@ $(document).ready(function() {
 
         if (selectionType === "Sightseeing Filter") {
 
+            // Set map center and zoom . . .
+
+            var mapDetails = {
+
+                // Center on Johannesburg
+
+                center: { lat: -26.1715046, lng: 27.969983412 },
+                zoom: 5
+            };
+
             // Set the labels and locations for the Sightseeing types . . .
 
-            var cityLabels = "GM";
+            var cityLabels = "EKU";
             var cityLocations = [
 
                 // E = Stellenbosch
@@ -299,14 +506,11 @@ $(document).ready(function() {
                 // K = Port Elizabeth
                 { lat: -33.8012478, lng: 25.249983910 },
 
-                // R = Soweto
-                { lat: -26.2438785, lng: 27.768230212 },
-
-                // V = Johannesburg
+                // U = Johannesburg
                 { lat: -26.1715046, lng: 27.969983412 }
             ];
 
-            var sceneryLabels = "OPU";
+            var sceneryLabels = "BDJ";
             var sceneryLocations = [
 
                 /// B = Chapman's Peak
@@ -316,20 +520,17 @@ $(document).ready(function() {
                 { lat: -34.3567013, lng: 18.470203916 },
 
                 // J = Nature's Valley
-                { lat: -33.9782911, lng: 23.547230515 },
-
-                // x = Northcliff Ridge Eco Park
-                { lat: -26.1452546, lng: 27.967363217 }
+                { lat: -33.9782911, lng: 23.547230515 }
             ];
 
-            var whalesLabels = "SW";
+            var whalesLabels = "H";
             var whalesLocations = [
 
                 // H = Plettenburg Bay
                 { lat: -34.0610681, lng: 23.29123112 }
             ];
 
-            var wineLabels = "T";
+            var wineLabels = "F";
             var wineLocations = [
 
                 // F = Marianne Wine Estate
@@ -351,44 +552,50 @@ $(document).ready(function() {
                 pieSlices = pieSlices.concat(classNames[1]);
             }
 
+            //If all the slices are deselected, pieSlices will be empty
 
-            for (var i = 0; i < pieSlices.length; i++) {
-                if (pieSlices[i] === "_0") {
+            if (pieSlices.length > 0) {
 
-                    mapLocs = mapLocs.concat(cityLocations);
-                    mapLabels = mapLabels.concat(cityLabels);
-                }
+                for (var i = 0; i < pieSlices.length; i++) {
+                    if (pieSlices[i] === "_0") {
 
-                if (pieSlices[i] === "_1") {
+                        mapLocs = mapLocs.concat(cityLocations);
+                        mapLabels = mapLabels.concat(cityLabels);
+                    }
 
-                    mapLocs = mapLocs.concat(sceneryLocations);
-                    mapLabels = mapLabels.concat(sceneryLabels);
-                }
+                    if (pieSlices[i] === "_1") {
 
-                if (pieSlices[i] === "_2") {
+                        mapLocs = mapLocs.concat(sceneryLocations);
+                        mapLabels = mapLabels.concat(sceneryLabels);
+                    }
 
-                    mapLocs = mapLocs.concat(whalesLocations);
-                    mapLabels = mapLabels.concat(whalesLabels);
-                }
+                    if (pieSlices[i] === "_2") {
 
-                if (pieSlices[i] === "_3") {
+                        mapLocs = mapLocs.concat(whalesLocations);
+                        mapLabels = mapLabels.concat(whalesLabels);
+                    }
 
-                    mapLocs = mapLocs.concat(wineLocations);
-                    mapLabels = mapLabels.concat(wineLabels);
+                    if (pieSlices[i] === "_3") {
+
+                        mapLocs = mapLocs.concat(wineLocations);
+                        mapLabels = mapLabels.concat(wineLabels);
+                    }
                 }
             }
+            else {
+
+                // No slices selected, show all sightseeing details . . .
+
+                mapLocs = mapLocs.concat(cityLocations, sceneryLocations, whalesLocations, wineLocations);
+                mapLabels = mapLabels.concat(cityLabels, sceneryLabels, whalesLabels, wineLabels);
+            }
+
         }
 
-        var mapDetails = {
-            // Center half way between nearest and further marker so that all markers can be seen on the map
-            center: { lat: -30.330950, lng: 25.002745 },
-            zoom: 5
-        };
-
         // The following function is in maps.js. It shows the selected locations on the Map.
-        
-        console.log("mapLocs = "+mapLocs);
-        console.log("mapLabels = "+mapLabels);
+
+        console.log("mapLocs = " + mapLocs);
+        console.log("mapLabels = " + mapLabels);
 
         showOnMap(mapDetails, mapLocs, mapLabels);
     });

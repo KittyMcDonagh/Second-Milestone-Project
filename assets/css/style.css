@@ -32,9 +32,19 @@
     width: 100%;
     text-decoration: none;
     color: #e7f0fe !important;
-    padding-left: 20px!important;
-    padding-right: 20px!important;
+    padding-left: 15px!important;
+    padding-right: 15px!important; 
 }
+
+/* Overwrite the top and bottom padding of .nav-link bootstrap class so that the pie can
+be completely visible when an item is selected from the dropdown menu on a mobile */
+
+.nav-link {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+
 
 .menu-nav-links a:hover {
     background-color: #f4b400;
@@ -53,9 +63,14 @@
 
 .user-message-style-bg {
     background-color: #0d5bd9;
-    
 }
 
+#user-message-2 {
+    color:#0d5bd9;
+    font-size:13px;
+    padding: 10px;
+    font-style: italic;
+}
 
 
 .logo {
@@ -131,7 +146,7 @@
 }
 
 svg {
-    height: 470px;
+    height: 431px;
     width: 100%;
     position: relative;
  /*   border: solid 1px #87b2f8; */
