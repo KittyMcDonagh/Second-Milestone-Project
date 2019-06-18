@@ -59,8 +59,7 @@ $(document).ready(function() {
 
         // The following function is in maps.js. It shows the selected locations on the Map.
 
-        console.log("mapLocs = " + mapLocs);
-        console.log("mapLabels = " + mapLabels);
+
 
         showOnMap(mapDetails, mapLocs, mapLabels);
 
@@ -81,7 +80,7 @@ $(document).ready(function() {
             var residence_dim = ndx.dimension(dc.pluck('type'));
             var total_days_per_residence = residence_dim.group().reduceSum(dc.pluck('ldg_count'));
             dc.pieChart('#filter-piechart')
-                .height(470)
+                .height(431)
                 .radius(90)
                 .transitionDuration(1500)
                 .dimension(residence_dim)
@@ -141,8 +140,7 @@ $(document).ready(function() {
 
         // The following function is in maps.js. It shows the selected locations on the Map.
 
-        console.log("mapLocs = " + mapLocs);
-        console.log("mapLabels = " + mapLabels);
+
 
         showOnMap(mapDetails, mapLocs, mapLabels);
 
@@ -162,7 +160,7 @@ $(document).ready(function() {
             var safari_dim = ndx.dimension(dc.pluck('type'));
             var total_per_safari = safari_dim.group().reduceSum(dc.pluck('safari_count'));
             dc.pieChart('#filter-piechart')
-                .height(470)
+                .height(431)
                 .radius(90)
                 .transitionDuration(1500)
                 .dimension(safari_dim)
@@ -182,7 +180,7 @@ $(document).ready(function() {
         // But first make sure Sight Seeing is showing
 
         $(".sightseeing").show();
-        
+
         $(".lodgings").hide();
         $(".safari").hide();
 
@@ -225,8 +223,7 @@ $(document).ready(function() {
 
         // The following function is in maps.js. It shows the selected locations on the Map.
 
-        console.log("mapLocs = " + mapLocs);
-        console.log("mapLabels = " + mapLabels);
+
 
         showOnMap(mapDetails, mapLocs, mapLabels);
 
@@ -246,7 +243,7 @@ $(document).ready(function() {
             var sightsee_dim = ndx.dimension(dc.pluck('type'));
             var total_per_sightsee = sightsee_dim.group().reduceSum(dc.pluck('sight_see_count'));
             dc.pieChart('#filter-piechart')
-                .height(470)
+                .height(431)
                 .radius(90)
                 .transitionDuration(1500)
                 .dimension(sightsee_dim)
@@ -264,7 +261,7 @@ $(document).ready(function() {
         // Select the pieces of the pie that were clicked on and display their markers on the map
 
         var selectionType = document.getElementById('user-message').innerHTML;
-        console.log(selectionType);
+
 
         var mapLocs = [];
         var mapLabels = "";
@@ -337,14 +334,23 @@ $(document).ready(function() {
                 pieSlices = pieSlices.concat(classNames[1]);
             }
 
-            console.log("pieSlices = " + pieSlices);
+            // First hide all Lodging Types in the Gallery, then show what's been selected . . .
 
-            // If nothing is selected, pieSlices will be empty . . .
+            $(".hotel").hide();
+            $(".lodge").hide();
+            $(".restcamp").hide();
+
+
+            // If nothing is selected (i.e. the piechart is reset to the begining, pieSlices will be empty . . .
 
             if (pieSlices.length > 0) {
 
                 for (var i = 0; i < pieSlices.length; i++) {
                     if (pieSlices[i] === "_0") {
+
+                        // Show hotels in the Gallery 
+
+                        $(".hotel").show();
 
                         mapLocs = mapLocs.concat(hotelLocations);
                         mapLabels = mapLabels.concat(hotelLabels);
@@ -352,11 +358,15 @@ $(document).ready(function() {
 
                     if (pieSlices[i] === "_1") {
 
+                        $(".lodge").show();
+
                         mapLocs = mapLocs.concat(lodgesLocations);
                         mapLabels = mapLabels.concat(lodgesLabels);
                     }
 
                     if (pieSlices[i] === "_2") {
+
+                        $(".restcamp").show();
 
                         mapLocs = mapLocs.concat(restCampLocations);
                         mapLabels = mapLabels.concat(restCampLabels);
@@ -365,7 +375,11 @@ $(document).ready(function() {
             }
             else {
 
-                // No slices selected, show all lodgings details . . .
+                // No slices selected (piechart has reset to the begining, show all lodgings details . . .
+
+                $(".hotel").show();
+                $(".lodge").show();
+                $(".restcamp").show();
 
                 mapLocs = mapLocs.concat(hotelLocations, lodgesLocations, restCampLocations);
                 mapLabels = mapLabels.concat(hotelLabels, lodgesLabels, restCampLabels);
@@ -441,12 +455,23 @@ $(document).ready(function() {
                 pieSlices = pieSlices.concat(classNames[1]);
             }
 
-            // If everything is deselected, pieSlices will be empty
+            // First hide all Safari details and then show the types selected . . .
+
+            $(".bigfive").hide();
+            $(".elephants").hide();
+            $(".lions").hide();
+            $(".cheetahs").hide();
+
+            // If everything is deselected (piechart has reset), pieSlices will be empty
 
             if (pieSlices.length > 0) {
 
                 for (var i = 0; i < pieSlices.length; i++) {
                     if (pieSlices[i] === "_0") {
+
+                        // Show the Big Five in Gallery
+
+                        $(".bigfive").show();
 
                         mapLocs = mapLocs.concat(bigFiveLocations);
                         mapLabels = mapLabels.concat(bigFiveLabels);
@@ -454,26 +479,46 @@ $(document).ready(function() {
 
                     if (pieSlices[i] === "_1") {
 
-                        mapLocs = mapLocs.concat(lionLocations);
-                        mapLabels = mapLabels.concat(lionLabels);
+                        // Show Elephants in Gallery
+
+                        $(".elephants").show();
+
+                        mapLocs = mapLocs.concat(elephantLocations);
+                        mapLabels = mapLabels.concat(elephantLabels);
                     }
 
                     if (pieSlices[i] === "_2") {
 
-                        mapLocs = mapLocs.concat(cheetahLocations);
-                        mapLabels = mapLabels.concat(cheetahLabels);
+                        // Show Lions in Gallery
+
+                        $(".lions").show();
+
+
+                        mapLocs = mapLocs.concat(lionLocations);
+                        mapLabels = mapLabels.concat(lionLabels);
                     }
 
                     if (pieSlices[i] === "_3") {
 
-                        mapLocs = mapLocs.concat(elephantLocations);
-                        mapLabels = mapLabels.concat(elephantLabels);
+                        // Show Cheetahs in Gallery
+
+                        $(".cheetahs").show();
+
+
+                        mapLocs = mapLocs.concat(cheetahLocations);
+                        mapLabels = mapLabels.concat(cheetahLabels);
                     }
                 }
             }
             else {
 
-                // No slices selected, show all safari details . . .
+                // No slices selected (piechart has reset, show all safari details . . .
+                
+                $(".bigfive").show();
+                $(".elephants").show();
+                $(".lions").show();
+                $(".cheetahs").show();
+
 
                 mapLocs = mapLocs.concat(bigFiveLocations, lionLocations, cheetahLocations, elephantLocations);
                 mapLabels = mapLabels.concat(bigFiveLabels, lionLabels, cheetahLabels, elephantLabels);
@@ -552,12 +597,22 @@ $(document).ready(function() {
                 pieSlices = pieSlices.concat(classNames[1]);
             }
 
-            //If all the slices are deselected, pieSlices will be empty
+            // First hide all Sight Seeing types in the Gallery, then show what's been selected . . .
+
+            $(".cities").hide();
+            $(".scenery").hide();
+            $(".whales").hide();
+            $(".winery").hide();
+
+            //If all the slices are deselected (piechart has reset), pieSlices will be empty
 
             if (pieSlices.length > 0) {
 
                 for (var i = 0; i < pieSlices.length; i++) {
                     if (pieSlices[i] === "_0") {
+
+                        // Show cities in the Gallery
+                        $(".cities").show();
 
                         mapLocs = mapLocs.concat(cityLocations);
                         mapLabels = mapLabels.concat(cityLabels);
@@ -565,17 +620,28 @@ $(document).ready(function() {
 
                     if (pieSlices[i] === "_1") {
 
+                        // Show Scenery in the Gallery
+                        $(".scenery").show();
+
                         mapLocs = mapLocs.concat(sceneryLocations);
                         mapLabels = mapLabels.concat(sceneryLabels);
                     }
 
                     if (pieSlices[i] === "_2") {
 
+                        // Show whales in the Gallery
+
+                        $(".whales").show();
+
                         mapLocs = mapLocs.concat(whalesLocations);
                         mapLabels = mapLabels.concat(whalesLabels);
                     }
 
                     if (pieSlices[i] === "_3") {
+
+                        // Show winery in the Gallery
+
+                        $(".winery").show();
 
                         mapLocs = mapLocs.concat(wineLocations);
                         mapLabels = mapLabels.concat(wineLabels);
@@ -584,7 +650,13 @@ $(document).ready(function() {
             }
             else {
 
-                // No slices selected, show all sightseeing details . . .
+                // No slices selected (piechart has reset), show all sightseeing details . . .
+
+                $(".cities").show();
+                $(".scenery").show();
+                $(".whales").show();
+                $(".winery").show();
+
 
                 mapLocs = mapLocs.concat(cityLocations, sceneryLocations, whalesLocations, wineLocations);
                 mapLabels = mapLabels.concat(cityLabels, sceneryLabels, whalesLabels, wineLabels);
@@ -593,9 +665,6 @@ $(document).ready(function() {
         }
 
         // The following function is in maps.js. It shows the selected locations on the Map.
-
-        console.log("mapLocs = " + mapLocs);
-        console.log("mapLabels = " + mapLabels);
 
         showOnMap(mapDetails, mapLocs, mapLabels);
     });

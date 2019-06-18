@@ -137,6 +137,7 @@
                 showInfoWindow()
             });
             mapMarkers[i].setMap(map);
+            
         }
     }
 
