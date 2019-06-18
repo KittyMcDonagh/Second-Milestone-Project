@@ -52,7 +52,7 @@
             // K = Port Elizabeth
             { lat: -33.8012478, lng: 25.249983910 },
 
-            // L = Spekboom Tented Camp
+            // L = Skepboom Tented Camp
             { lat: -33.5125013, lng: 25.751274517 },
 
             // M = Addo Elephant National Park
@@ -85,7 +85,7 @@
             // V = Johannesburg
             { lat: -26.1715046, lng: 27.969983412 },
 
-            // W = Ukutula Lodge and Game Reserve
+            // w = Ukutula Lodge and Game Reserve
             { lat: -25.5219364, lng: 27.67158617 },
 
             // x = Northcliff Ridge Eco Park

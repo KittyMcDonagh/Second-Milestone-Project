@@ -3,9 +3,6 @@ $(document).ready(function() {
     $("#user-message").html("Click on a menu item and the filter will appear here.").hide();
     $("#user-message").addClass("user-message-style-bg");
     $("#user-message").fadeTo(7000, .7);
-    
-    
-    
 
     // If LODGINGS is clicked . . .
 

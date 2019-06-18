@@ -3,8 +3,6 @@
 
 <head>
 
-
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
@@ -48,6 +46,7 @@
                         <li id="lodgings-link" class="nav-item menu-nav-links text-uppercase"><a class="nav-link" href="#">LODGINGS </a></li>
                         <li id="safari-link" class="nav-item menu-nav-links text-uppercase"><a class="nav-link" href="#">SAFARI</a></li>
                         <li id="sightseeing-link" class="nav-item menu-nav-links text-uppercase"><a class="nav-link" href="#">SIGHT SEEING</a></li>
+                        <li id="gallery-link" class="nav-item menu-nav-links text-uppercase"><a class="nav-link" href="#gallery">GALLERY</a></li>
                     </ul>
                 </div>
 
@@ -89,17 +88,245 @@
 
             <!-- Show background photo -->
 
-            <div class="row no-gutters">
+            <!--
+            <div class="row no-gutters" id="photo">
                 <div class="col-12 bg-photo set-position"></div>
+            </div>
+            -->
+
+
+            <!-- The Gallery. -->
+            <!-- Creating an id here for the Gallery nav link to jump to, 
+            <!-- as the div for the Gallery is offset by "set-position" to 80px from the top, due to the fixed navbar -->
+            <!-- and those 80px are not taken into account by the jump from the link -->
+
+            <div id="gallery"></div>
+
+            <div class="row  no-gutters p-0 set-position">
+
+                <!-- Show Lodgings Gallery . . . -->
+
+                <div class="col-12 col-md-4 p-0 m-0 border-setting gallery-bg" id="lodgings-info ">
+                    <div class="row no-gutters p-0 ">
+                        <div class="col-12 ">
+                            <h6 class="gallery-heading-style text-center ">Lodgings</h6>
+                        </div>
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="hotelverde "></div>
+                            </div>
+                            <a href="https://www.verdehotels.com/capetown/ " target="_blank " class="photo-links ">A. Hotel Verde</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="hotelquayside "></div>
+                            </div>
+                            <a href="https://www.aha.co.za/quayside/ " target="_blank " class="photo-links ">C. Quayside Hotel</a>
+                        </div>
+
+                    </div>
+
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="hotelprotea "></div>
+                            </div>
+                            <a href="https://www.marriott.com/hotels/travel/jnbro-protea-hotel-roodepoort/?scid=bb1a189a-fec3-4d19-a255-54ba596febe2 " target="_blank " class="photo-links ">Q. Hotel Protea</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="lodgemilkwood "></div>
+                            </div>
+                            <a href="http://www.milkwoodmanor.co.za/ " target="_blank " class="photo-links ">I. Milkwood Manor Lodge</a>
+                        </div>
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="lodgeknysna "></div>
+                            </div>
+                            <a href="https://knysnaelephantpark.co.za/" target="_blank " class="photo-links ">G. Knysna Elephant Park Lodge</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="restcampspekboom "></div>
+                            </div>
+                            <a href="https://www.sanparks.org/parks/addo/camps/spekboom/ " target="_blank " class="photo-links ">L. Spekboom Tented Camp</a>
+                        </div>
+
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="restcamplowersabie "></div>
+                            </div>
+                            <a href="http://www.krugerpark.co.za/Kruger_National_Park_Lodging_&_Camping_Guide-travel/lower-sabie-camp.html " target="_blank " class="photo-links ">N. Lower Sabie Rest Camp</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="lodgeglenafric "></div>
+                            </div>
+                            <a href="http://www.glenafric.co.za/ " target="_blank " class="photo-links ">P. Glen Afric Lodge</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Show Safari Gallery . . . -->
+
+                <div class="col-12 col-md-4 p-0 m-0 gallery-bg border-setting " id="safari-info ">
+                    <div class="row no-gutters p-0 ">
+                        <div class="col-12 ">
+                            <h6 class="gallery-heading-style text-center ">SAFARI</h6>
+                        </div>
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="safariknysnapark"></div>
+                            </div>
+                            <a href="https://knysnaelephantpark.co.za/" target="_blank " class="photo-links ">G. Knysna Elephant Park</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="safariaddoelephantpark"></div>
+                            </div>
+                            <a href="https://www.sanparks.org/parks/addo/" target="_blank " class="photo-links ">M. Addo Elephant Park</a>
+                        </div>
+
+                    </div>
+
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="safarikrugerpark"></div>
+                            </div>
+                            <a href="http://www.krugerpark.co.za/" target="_blank " class="photo-links ">O. Kruger National Park</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="safariglenafric "></div>
+                            </div>
+                            <a href="https://www.glenafric.co.za/" target="_blank " class="photo-links ">P. Glen Afric Park</a>
+                        </div>
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="safarilionandsafari"></div>
+                            </div>
+                            <a href="http://www.lionandsafaripark.com/" target="_blank " class="photo-links ">S. Lion and Safari Park</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="safaridewildtcheetah"></div>
+                            </div>
+                            <a href="https://dewildt.co.za/" target="_blank " class="photo-links ">T. de Wildt Cheetah Sanctuary</a>
+                        </div>
+
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="safarizulunyala "></div>
+                            </div>
+                            <a href="http://zulunyalagroup.com/Hluhluwe/Heritage-Safari-Lodge/" target="_blank " class="photo-links ">U. Zulu Nyala</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="safariukutulu"></div>
+                            </div>
+                            <a href="http://lodge.ukutula.co.za/" target="_blank " class="photo-links ">W. Ukutula Lodge and Game Reserve</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Show Sightseeing Gallery . . . -->
+                <div class="col-12 col-md-4 p-0 m-0 border-setting gallery-bg" id="safari-info ">
+                    <div class="row no-gutters p-0 ">
+                        <div class="col-12 ">
+                            <h6 class="gallery-heading-style text-center ">SIGHT SEEING</h6>
+                        </div>
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="sightseechapmanspeak"></div>
+                            </div>
+                            <a href="https://www.chapmanspeakdrive.co.za/" target="_blank " class="photo-links ">B. Chapman's Peak</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="sightseecapeofgoodhope"></div>
+                            </div>
+                            <a href="https://www.sanparks.org/parks/table_mountain/tourism/attractions.php#goodhope" target="_blank " class="photo-links ">D. Cape of Good Hope</a>
+                        </div>
+
+                    </div>
+
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="sightseestellenbosch"></div>
+                            </div>
+                            <a href="https://www.stellenbosch.travel/" target="_blank " class="photo-links ">E. Stellenbosch</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="sightseemariannewine"></div>
+                            </div>
+                            <a href="http://www.mariannewines.com/" target="_blank " class="photo-links ">F. Marianne Wine Estate</a>
+                        </div>
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="sightseeplettenbergbay"></div>
+                            </div>
+                            <a href="https://www.plett-tourism.co.za/" target="_blank " class="photo-links ">H. Plettenberg Bay</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="sightseenaturesvalley"></div>
+                            </div>
+                            <a href="https://www.sa-venues.com/attractionsgr/natures-valley.php" target="_blank " class="photo-links ">J. Nature's Valley</a>
+                        </div>
+
+                    </div>
+                    <div class="row ml-auto mr-auto p-0 ">
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="sightseeportelizabeth"></div>
+                            </div>
+                            <a href="https://www.nmbt.co.za/" target="_blank " class="photo-links ">K. Port Elizabeth</a>
+                        </div>
+                        <div class="col-6 image-padding text-center ">
+                            <div class="image-size ">
+                                <div class="sightseejohannesburg"></div>
+                            </div>
+                            <a href="https://www.joburg.org.za/" target="_blank " class="photo-links ">V. Johannesburg</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
             </div>
 
         </main>
 
         <!-- FOOTER -->
-        <footer class="footer-style set-position">
-            <div class="row no-gutters">
-                <div class="col p-0">
-                    <p class="footer-padding">My South African Trip</p>
+        <footer class="footer-style set-position ">
+            <div class="row no-gutters ">
+                <div class="col p-0 ">
+                    <p class="footer-padding ">My South African Trip</p>
                 </div>
             </div>
         </footer>
@@ -109,18 +336,18 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js " integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=" anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
 
     <!-- The main script for the Google api is loaded in head (see comments above). Other Scripts for Google Maps -->
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js "></script>
     <!-- User interaction scripts are in this file. -->
-    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/dashboard.js "></script>
 
     <!-- Scripts to filter locations on Google maps are in this file -->
 
-    <script src="assets/js/maps.js"></script>
+    <script src="assets/js/maps.js "></script>
 
 </body>
 

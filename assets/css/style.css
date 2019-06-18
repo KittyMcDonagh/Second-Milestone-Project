@@ -1,4 +1,4 @@
-/* Colors for welcome banner - background-color: #e7effd; color: #4a89f3;  */
+
 
 .navbar-style {
     background-color: #db4437;
@@ -56,10 +56,6 @@
     
 }
 
-
-.highlight {
-    background-color: pink;
-}
 
 
 .logo {
@@ -152,8 +148,23 @@ svg {
     font-style: italic;
     font-weight: Bold;
     padding:3px 0;
+}
 
+.gallery-heading-style {
+    position: relative;
+    background-color: #0d5bd9;
+    color: #e7f0fe;
+    margin:0px;
+    opacity: 1;
+    font-style: italic;
+    font-weight: Bold;
+    padding:3px 0;
+    
+}
 
+.gallery-bg {
+   background-color: #e7f0fe; 
+   
 }
 
 
@@ -196,7 +207,453 @@ div#map {
     height: 300px;
 }
 
+.photo-style {
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    width: 75px;
+    height: 100px;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    padding:15px;
+    
+}
 
+.image-padding {
+    padding: 5px;
+}
+
+.image-size {
+    height: 200px;
+    width: 100%;
+}
+
+/* Photo copied from Hotel Verde website */
+
+.hotelverde {
+    background: url("../images/hotelverde.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Photo copied from Quayside Hotel website */
+
+.hotelquayside {
+    background: url("../images/quaysidehotel.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Photo copied from Protea Hotel website */
+
+.hotelprotea {
+    background: url("../images/hotelprotea.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Photo copied from Knysna Elephant Park website */
+
+.lodgeknysna {
+    background: url("../images/lodgeknysna.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Photo copied from Milkwood Manor website */
+
+.lodgemilkwood {
+    background: url("../images/lodgemilkwood.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.lodgeglenafric {
+    background: url("../images/lodgeglenafric.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/*  Photo copied from Tripadvisor*/
+.restcampspekboom {
+    background: url("../images/restcampspekboom.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/*  Photo copied from Google images*/
+.restcamplowersabie {
+    background: url("../images/restcamplowersabie.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Photo copied from Knysna Elephant Park website */
+
+.safariknysnapark {
+    background: url("../images/safariknysnapark.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Photo copied from Knysna Elephant Park website */
+
+.safariaddoelephantpark {
+    background: url("../images/safariaddoelephantpark.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.safarikrugerpark {
+    background: url("../images/safarikrugerpark.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.safariglenafric {
+    background: url("../images/safariglenafric.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.safarilionandsafari {
+    background: url("../images/safarilionandsafari.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.safaridewildtcheetah {
+    background: url("../images/safaridewildtcheetah.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.safarizulunyala {
+    background: url("../images/safarizulunyala.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.safariukutulu {
+    background: url("../images/safariukutulu.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Chapmans Peak - image copied from google images */
+
+.sightseechapmanspeak {
+    background: url("../images/sightseechapmanspeak.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Cape of Good Hope - image copied from google images */
+
+.sightseecapeofgoodhope {
+    background: url("../images/sightseecapeofgoodhope.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Stellenbosh city - image copied from google images */
+
+.sightseestellenbosch {
+    background: url("../images/sightseestellenbosch.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+
+/* Marianne Wine Estate - image copied from marianne wine estates website */
+
+.sightseemariannewine {
+    background: url("../images/sightseemariannewine.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Marianne Wine Estate - image copied from marianne wine estates website */
+
+.sightseeplettenbergbay {
+    background: url("../images/sightseeplettenbergbay.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Nature's Valley - image copied from google images */
+
+.sightseenaturesvalley {
+    background: url("../images/sightseenaturesvalley.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Port Elizabeth - image copied from google images */
+
+.sightseeportelizabeth {
+    background: url("../images/sightseeportelizabeth.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+/* Johannesburg - image copied from google images */
+
+.sightseejohannesburg {
+    background: url("../images/sightseejohannesburg.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+
+
+.photo-links {
+    font-style: italic;
+    font-size: 13px;
+    
+}
 
 
 /* Footer details.     */
@@ -204,7 +661,7 @@ div#map {
 .footer-style {
     color: #e7effd;
     /*    background-color: #4a89f3; */
-    background-color: #DD4B3E;
+    background-color: #dd4b3e;
     margin-bottom: 0px;
     text-align: center;
 }
