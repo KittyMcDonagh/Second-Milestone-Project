@@ -11,7 +11,9 @@
                 // Center on Glen Afric
                 lat: -25.8135641,
                 lng: 27.869428517
-            }
+
+            },
+            disableDefaultUI: true
 
         });
 
@@ -36,7 +38,7 @@
             // F = Marianne Wine Estate
             { lat: -33.8298546, lng: 18.877630117 },
 
-            // G = Knysna Elephant Park
+            // G = Elephant Park, Knysna 
             { lat: -34.0385536, lng: 23.26503617 },
 
             // H = Plettenburg Bay
@@ -86,64 +88,136 @@
 
         ];
 
+        var mapNames = [
+
+            // A = Hotel Verde
+            "Hotel Verde, Cape Town",
+
+            // B = Chapman's Peak
+            "Chapman's Peak, Cape Peninsula",
+
+            // C = Quayside Hotel, Simonstown
+            "Quayside Hotel, Simonstown",
+
+            // D = Cape of Good Hope
+            "Cape of Good Hope, Cape Peninsula",
+
+            // E = Stellenbosch
+            "Stellenbosch, Western Cape",
+
+            // F = Marianne Wine Estate
+            "Marianne Wine Estate, Stellenbosch",
+
+            // G = Knysna Elephant Park
+            "Elephant Park, Knysna",
+
+            // H = Plettenburg Bay
+            "Plettenburg Bay, Western Cape",
+
+            // I = Milkwood Manor
+            "Milkwood Manor, Plettenburg Bay",
+
+            // J = Nature's Valley
+            "Nature's Valley, Southern Cape",
+
+            // K = Port Elizabeth
+            "Port Elizabeth, Eastern Cape",
+
+            // L = Spekboom Tented Camp
+            "Spekboom Tented Camp, Addo Elephant Park",
+
+            // M = Addo Elephant National Park
+            "Elephant National Park, Addo ",
+
+            // N = Lower Sabie Rest Camp
+            "Lower Sabie Rest Camp, Kruger National Park",
+
+            // O = Kruger National Park
+            "Kruger National Park, South Africa",
+
+            // P = Glen Afric
+            "Glen Afric Park, South Africa",
+
+            // Q = Protea Hotel by Marriott
+            "Protea Hotel by Marriott, Roodepoort",
+
+            // R = Lion and Safari Park
+            "Lion and Safari Park, Hartbeespoort",
+
+            // S = de Wildt Cheetah Sanctuary
+            "de Wildt Cheetah Sanctuary",
+
+            // T = Zulu Nyala Country Manor
+            "Zulu Nyala Country Manor, Hluhluwe",
+
+            // U = Johannesburg
+            "Johannesburg, Gauteng",
+
+            // V = Ukutula Lodge and Game Reserve
+            "Ukutula Lodge and Game Reserve, Farm Klipkop"
+
+        ];
+
+
 
         // This function returns all the markers into "markers" which is passed to MarkerClusterer to be clustered
 
-        var markers = locations.map(function(location, i) {
-            return new google.maps.Marker({
-                position: location,
-                label: labels[i % labels.length]
-            });
-        });
-
-        var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
-
-    }
-
-
-    //...............Show specific locations on the map
-
-    function showOnMap(mapDetails, mapLocs, mapLabels, mapNames) {
-
-        var map = new google.maps.Map(document.getElementById("map"), mapDetails);
-
-        for (i = 0; i < mapLocs.length; i++) {
-
-            var mapMarkers = mapLocs.map(function(location, i) {
-                return new google.maps.Marker({
-                    position: location,
-                    label: mapLabels[i % mapLabels.length]
-                });
-                mapMarkers[i] = new google.maps.Marker({
-                    position: mapLocs[i],
-                    animation: google.maps.Animation.DROP
-                });
-            });
-
-            // Add a listener to the marker, and when clicked, show  the name in the marker's infowindow
-
-            let markerName = mapNames[i].slice(0)
-            
-            google.maps.event.addListener(mapMarkers[i], 'click', function() {
-                
-            // "this" us the marker that was clicked on
-
-            var marker = this;
-            
-            var infoWindow = new google.maps.InfoWindow({
-                content: markerName
-            });
-            
-            // Show the marker name in the maps marker's infowindow
-            infoWindow.open(map, marker);
-            
-        });
         
-        // Add the marker to the map
-        
-        mapMarkers[i].setMap(map);
+ 
+               var markers = locations.map(function(location, i) {
+                   return new google.maps.Marker({
+                       position: location,
+                       label: labels[i % labels.length]
+                   });
+               });
 
+               var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+
+           }
+
+
+
+        //...............Show specific locations on the map
+
+        function showOnMap(mapDetails, mapLocs, mapLabels, mapNames) {
+
+            var map = new google.maps.Map(document.getElementById("map"), mapDetails);
+
+            for (i = 0; i < mapLocs.length; i++) {
+
+                var mapMarkers = mapLocs.map(function(location, i) {
+                    return new google.maps.Marker({
+                        position: location,
+                        label: mapLabels[i % mapLabels.length]
+                    });
+                    mapMarkers[i] = new google.maps.Marker({
+                        position: mapLocs[i],
+                        animation: google.maps.Animation.DROP
+                    });
+                });
+
+                // Add a listener to the marker, and when clicked, show  the name in the marker's infowindow
+
+                let markerName = mapNames[i].slice(0)
+
+                google.maps.event.addListener(mapMarkers[i], 'click', function() {
+
+                    // "this" us the marker that was clicked on
+
+                    var marker = this;
+
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: markerName
+                    });
+
+                    // Show the marker name in the maps marker's infowindow
+                    infoWindow.open(map, marker);
+
+                });
+
+                // Add the marker to the map
+
+                mapMarkers[i].setMap(map);
+
+            }
         }
-    }
-
-    

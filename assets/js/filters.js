@@ -79,7 +79,8 @@ $(document).ready(function() {
         var mapDetails = {
             // Center on Glen Afric
             center: { lat: -25.8135641, lng: 27.869428517 },
-            zoom: 5
+            zoom: 5,
+            disableDefaultUI: true
         };
 
         // The following function is in maps.js. It shows the selected locations on the Map.
@@ -181,7 +182,8 @@ $(document).ready(function() {
         var mapDetails = {
             // Center on Glen Afric
             center: { lat: -25.8135641, lng: 27.869428517 },
-            zoom: 5
+            zoom: 5,
+            disableDefaultUI: true
         };
 
         // The following function is in maps.js. It shows the selected locations on the Map.
@@ -284,7 +286,8 @@ $(document).ready(function() {
             // Center on Johannesburg
 
             center: { lat: -26.1715046, lng: 27.969983412 },
-            zoom: 5
+            zoom: 5,
+            disableDefaultUI: true
         };
 
         // The following function is in maps.js. It shows the selected locations on the Map.
@@ -344,7 +347,8 @@ $(document).ready(function() {
             var mapDetails = {
                 // Center on Glen Afric
                 center: { lat: -25.8135641, lng: 27.869428517 },
-                zoom: 5
+                zoom: 5,
+                disableDefaultUI: true
             };
 
             // Set the labels and locations for the Lodging Types . . .
@@ -494,7 +498,8 @@ $(document).ready(function() {
             var mapDetails = {
                 // Center on Glen Afric
                 center: { lat: -25.8135641, lng: 27.869428517 },
-                zoom: 5
+                zoom: 5,
+                disableDefaultUI: true
             };
 
             // Set the labels and locations for the Safari Types . . .
@@ -678,7 +683,8 @@ $(document).ready(function() {
                 // Center on Johannesburg
 
                 center: { lat: -26.1715046, lng: 27.969983412 },
-                zoom: 5
+                zoom: 5,
+                disableDefaultUI: true
             };
 
             // Set the labels and locations for the Sightseeing types . . .
