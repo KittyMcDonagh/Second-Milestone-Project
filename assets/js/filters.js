@@ -92,7 +92,7 @@ $(document).ready(function() {
         // Show the filter heading
         $("#user-message").addClass("filter-heading-style")
         $("#user-message").html("Lodgings Filter").show();
-        $("#user-message-2").html("Slice and Dice to Filter")
+        $("#user-message-2").html("Filter map Markers and Photos");
 
         queue()
             .defer(d3.json, "assets/data/sa-original.json")
@@ -192,6 +192,7 @@ $(document).ready(function() {
         // Show the filter heading
         $("#user-message").addClass("filter-heading-style")
         $("#user-message").html("Safari Filter").show();
+        $("#user-message-2").html("Filter map Markers and Photos");
 
         queue()
             .defer(d3.json, "assets/data/sa-original.json")
@@ -294,6 +295,7 @@ $(document).ready(function() {
         // Show the filter heading
         $("#user-message").addClass("filter-heading-style")
         $("#user-message").html("Sightseeing Filter").show();
+        $("#user-message-2").html("Filter map Markers and Photos");
 
         queue()
             .defer(d3.json, "assets/data/sa-original.json")
@@ -355,7 +357,7 @@ $(document).ready(function() {
                 // C = Quayside Hotel, Simonstown
 
                 { lat: -34.1928742, lng: 18.432612721 },
-                
+
                 // I = Milkwood Manor
                 { lat: -34.050294, lng: 23.373779317 },
 
@@ -370,7 +372,7 @@ $(document).ready(function() {
                 "Hotel Verde, Cape Town",
 
                 "Quayside Hotel, Simonstown",
-                
+
                 "Milkwood Manor, Plettenburg Bay",
 
                 "Protea Hotel by Marriott, Roodepoort"
