@@ -9,10 +9,10 @@
             center: {
 
                 // Center on Glen Afric
-                lat: -25.8135641, 
-                lng: 27.869428517 
+                lat: -25.8135641,
+                lng: 27.869428517
             }
-            
+
         });
 
         var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -103,12 +103,7 @@
 
     //...............Show specific locations on the map
 
-    function showOnMap(mapDetails, mapLocs, mapLabels) {
-
-        console.log(mapDetails);
-        console.log(mapLocs);
-        console.log(mapLabels);
-
+    function showOnMap(mapDetails, mapLocs, mapLabels, mapNames) {
 
         var map = new google.maps.Map(document.getElementById("map"), mapDetails);
 
@@ -125,39 +120,30 @@
                 });
             });
 
+            // Add a listener to the marker, and when clicked, show  the name in the marker's infowindow
 
-
-
-            // Add a listener to the marker and zoom in when clicked
-            // "this" is the marker that was clicked
-
-            google.maps.event.addListener(mapMarkers[i], 'click', function() {
-                map.setZoom(16);
-                map.setCenter(this.getPosition());
-                showInfoWindow()
-            });
-            mapMarkers[i].setMap(map);
+            let markerName = mapNames[i].slice(0)
             
+            google.maps.event.addListener(mapMarkers[i], 'click', function() {
+                
+            // "this" us the marker that was clicked on
+
+            var marker = this;
+            
+            var infoWindow = new google.maps.InfoWindow({
+                content: markerName
+            });
+            
+            // Show the marker name in the maps marker's infowindow
+            infoWindow.open(map, marker);
+            
+        });
+        
+        // Add the marker to the map
+        
+        mapMarkers[i].setMap(map);
+
         }
     }
 
-    // Get the place details for a Marker clicked on. Show the information in an info window,
-    // anchored on the marker for the location that the user selected.
-
-    function showInfoWindow(map, mapMarker) {
-
-        var infoWindow = new google.maps.InfoWindow({
-            content: "Hello Kitty!"
-        });
-
-        var marker = this;
-        places.getDetails({ placeId: marker.placeResult.place_id },
-            function(place, status) {
-                if (status !== google.maps.places.PlacesServiceStatus.OK) {
-                    return;
-                }
-                infoWindow.open(map, marker);
-            });
-
-    }
     

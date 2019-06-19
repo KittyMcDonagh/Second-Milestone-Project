@@ -1,9 +1,12 @@
 $(document).ready(function() {
 
-    $("#user-message").html("<p>Select <strong>Lodgings, Safari,</strong> or <strong>Sight Seeing</strong> from the above menu.</p>").hide();
-    $("#user-message").append("<p>A <strong>filter</strong> will appear here. Use it to filter the details on the Map and the Gallery.</p>").hide();
-    $("#user-message").append("<p>Select <strong>Gallery</strong> to see the photos below.</p>").hide();
-    $("#user-message").append("<p>Select <strong>Home</strong> to start again.</p>").hide();
+    $("#user-message").html("<p><strong><em>Welcome to my South African Trip Web Page!</em></strong></p>").hide();
+    $("#user-message").append("<hr>").hide();
+    $("#user-message").append("<p>Select <strong>Lodgings, Safari,</strong> or <strong>Sight Seeing</strong> from the <br>above navigation menu.</p>").hide();
+    $("#user-message").append("<p>A <strong>filter</strong> will appear here. Use it to filter the details on the Map and Gallery.</p>").hide();
+    $("#user-message").append("<hr>").hide();
+    $("#user-message").append("<p>Select <strong>Gallery</strong> to see <br>the photos below.</p>").hide();
+    $("#user-message").append("<p>Select <strong>Home</strong> to <br>start again.</p>").hide();
     $("#user-message").addClass("user-message-style-bg");
     $("#user-message").fadeTo(7000, .7);
 
@@ -51,6 +54,27 @@ $(document).ready(function() {
             { lat: -26.1486465, lng: 27.922543617 },
         ];
 
+        var mapNames = [
+
+            "Hotel Verde, Cape Town",
+
+            "Quayside Hotel, Simonstown",
+
+            "Elephant Park Lodge, Knysna",
+
+            "Milkwood Manor, Plettenburg Bay",
+
+            "Spekboom Tented Camp, Addo Elephant Park",
+
+            "Lower Sabie Rest Camp, Kruger National Park",
+
+            "Glen Afric Lodge, Glen Afric Park",
+
+            "Protea Hotel by Marriott, Roodepoort"
+        ];
+
+
+
         var mapDetails = {
             // Center on Glen Afric
             center: { lat: -25.8135641, lng: 27.869428517 },
@@ -61,7 +85,7 @@ $(document).ready(function() {
 
 
 
-        showOnMap(mapDetails, mapLocs, mapLabels);
+        showOnMap(mapDetails, mapLocs, mapLabels, mapNames);
 
 
 
@@ -132,6 +156,27 @@ $(document).ready(function() {
             { lat: -25.5219364, lng: 27.67158617 }
         ];
 
+        var mapNames = [
+
+            "Elephant Park, Knysna",
+
+            "Elephant National Park, Addo ",
+
+            "Kruger National Park, South Africa",
+
+            "Glen Afric Park, South Africa",
+
+            "Lion and Safari Park, Hartbeespoort",
+
+            "de Wildt Cheetah Sanctuary",
+
+            "Zulu Nyala Country Manor, Hluhluwe",
+
+            "Ukutula Lodge and Game Reserve, Farm Klipkop"
+
+        ];
+
+
         var mapDetails = {
             // Center on Glen Afric
             center: { lat: -25.8135641, lng: 27.869428517 },
@@ -141,8 +186,7 @@ $(document).ready(function() {
         // The following function is in maps.js. It shows the selected locations on the Map.
 
 
-
-        showOnMap(mapDetails, mapLocs, mapLabels);
+        showOnMap(mapDetails, mapLocs, mapLabels, mapNames);
 
 
         // Show the filter heading
@@ -213,6 +257,26 @@ $(document).ready(function() {
 
         ];
 
+        var mapNames = [
+
+            "Chapman's Peak, Cape Peninsula",
+
+            "Cape of Good Hope, Cape Peninsula",
+
+            "Stellenbosch, Western Cape",
+
+            "Marianne Wine Estate, Stellenbosch",
+
+            "Plettenburg Bay, Western Cape",
+
+            "Nature's Valley, Southern Cape",
+
+            "Port Elizabeth, Eastern Cape",
+
+            "Johannesburg, Gauteng"
+        ];
+
+
         var mapDetails = {
 
             // Center on Johannesburg
@@ -224,8 +288,7 @@ $(document).ready(function() {
         // The following function is in maps.js. It shows the selected locations on the Map.
 
 
-
-        showOnMap(mapDetails, mapLocs, mapLabels);
+        showOnMap(mapDetails, mapLocs, mapLabels, mapNames);
 
 
         // Show the filter heading
@@ -262,9 +325,11 @@ $(document).ready(function() {
 
         var selectionType = document.getElementById('user-message').innerHTML;
 
+        // Clear locations, labels, names and pie slices
 
         var mapLocs = [];
         var mapLabels = "";
+        var mapNames = [];
         var pieSlices = [];
 
         // If Lodgings Chart was clicked on . . . 
@@ -281,7 +346,7 @@ $(document).ready(function() {
 
             // Set the labels and locations for the Lodging Types . . .
 
-            var hotelLabels = "ACQ";
+            var hotelLabels = "ACIQ";
             var hotelLocations = [
 
                 // A = Hotel Verde
@@ -290,22 +355,44 @@ $(document).ready(function() {
                 // C = Quayside Hotel, Simonstown
 
                 { lat: -34.1928742, lng: 18.432612721 },
+                
+                // I = Milkwood Manor
+                { lat: -34.050294, lng: 23.373779317 },
 
                 // Q = Protea Hotel by Marriott
                 { lat: -26.1486451, lng: 27.924185419 }
             ];
 
-            var lodgesLabels = "GIP";
+            // Set Hotel Names for showing on Markers
+
+            var hotelNames = [
+
+                "Hotel Verde, Cape Town",
+
+                "Quayside Hotel, Simonstown",
+                
+                "Milkwood Manor, Plettenburg Bay",
+
+                "Protea Hotel by Marriott, Roodepoort"
+            ];
+
+            var lodgesLabels = "GP";
             var lodgesLocations = [
 
                 // G = Knysna Elephant Park
                 { lat: -34.0385536, lng: 23.26503617 },
 
-                // I = Milkwood Manor
-                { lat: -34.050294, lng: 23.373779317 },
-
                 // P = Glen Afric
                 { lat: -25.8135641, lng: 27.869428517 }
+
+            ];
+            // Set Lodge Names for showing on Markers
+
+            var lodgesNames = [
+
+                "Elephant Park Lodge, Knysna",
+
+                "Glen Afric Lodge, Glen Afric Park"
 
             ];
 
@@ -319,10 +406,15 @@ $(document).ready(function() {
                 { lat: -25.11986, lng: 31.913190317 }
             ];
 
+            // Set Restcamp Names for showing on Markers
 
-            // Get the pieces of the pie that are selected.
-            // The class "selected" will have been added to the element of the selected pie slice
-            // More than one slice may be selected
+            var restCampNames = [
+
+                "Spekboom Tented Camp, Addo Elephant Park",
+
+                "Lower Sabie Rest Camp, Kruger National Park"
+
+            ];
 
             var sliceName = $(".pie-slice-group").children(".selected");
 
@@ -354,6 +446,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(hotelLocations);
                         mapLabels = mapLabels.concat(hotelLabels);
+                        mapNames = mapNames.concat(hotelNames);
                     }
 
                     if (pieSlices[i] === "_1") {
@@ -362,6 +455,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(lodgesLocations);
                         mapLabels = mapLabels.concat(lodgesLabels);
+                        mapNames = mapNames.concat(lodgesNames);
                     }
 
                     if (pieSlices[i] === "_2") {
@@ -370,6 +464,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(restCampLocations);
                         mapLabels = mapLabels.concat(restCampLabels);
+                        mapNames = mapNames.concat(restCampNames);
                     }
                 }
             }
@@ -383,6 +478,7 @@ $(document).ready(function() {
 
                 mapLocs = mapLocs.concat(hotelLocations, lodgesLocations, restCampLocations);
                 mapLabels = mapLabels.concat(hotelLabels, lodgesLabels, restCampLabels);
+                mapNames = mapNames.concat(hotelNames, lodgesNames, restCampNames);
 
             }
         }
@@ -400,16 +496,6 @@ $(document).ready(function() {
 
             // Set the labels and locations for the Safari Types . . .
 
-            var elephantLabels = "GM";
-            var elephantLocations = [
-
-                // G = Knysna Elephant Park
-                { lat: -34.0385536, lng: 23.26503617 },
-
-                // M = Addo Elephant National Park
-                { lat: -33.4833333, lng: 25.747811317 }
-            ];
-
             var bigFiveLabels = "OPT";
             var bigFiveLocations = [
 
@@ -423,6 +509,38 @@ $(document).ready(function() {
                 { lat: -25.9916381, lng: 27.97380617 }
             ];
 
+            // Set the names for the Map Markers
+
+            var bigFiveNames = [
+
+                "Kruger National Park, South Africa",
+
+                "Glen Afric Park, South Africa",
+
+                "Zulu Nyala Country Manor, Hluhluwe",
+            ];
+
+
+            var elephantLabels = "GM";
+            var elephantLocations = [
+
+                // G = Knysna Elephant Park
+                { lat: -34.0385536, lng: 23.26503617 },
+
+                // M = Addo Elephant National Park
+                { lat: -33.4833333, lng: 25.747811317 }
+            ];
+
+            // Set the names for the Map Markers
+
+            var elephantNames = [
+
+                "Elephant Park, Knysna",
+
+                "Elephant National Park, Addo "
+
+            ];
+
             var lionLabels = "RV";
             var lionLocations = [
 
@@ -433,6 +551,15 @@ $(document).ready(function() {
                 { lat: -25.5219364, lng: 27.67158617 }
             ];
 
+            // Set the names for the Map Markers
+
+            var lionNames = [
+
+                "Lion and Safari Park, Hartbeespoort",
+
+                "Ukutula Lodge and Game Reserve, Farm Klipkop"
+            ];
+
             var cheetahLabels = "S";
             var cheetahLocations = [
 
@@ -440,6 +567,12 @@ $(document).ready(function() {
                 { lat: -25.6736889, lng: 27.921508817 }
 
             ];
+
+            var cheetahNames = [
+
+                "de Wildt Cheetah Sanctuary"
+            ];
+
 
             // Get the pieces of the pie that are selected.
             // The class "selected" will have been added to the element of the selected pie slice
@@ -475,6 +608,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(bigFiveLocations);
                         mapLabels = mapLabels.concat(bigFiveLabels);
+                        mapNames = mapNames.concat(bigFiveNames);
                     }
 
                     if (pieSlices[i] === "_1") {
@@ -485,6 +619,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(elephantLocations);
                         mapLabels = mapLabels.concat(elephantLabels);
+                        mapNames = mapNames.concat(elephantNames);
                     }
 
                     if (pieSlices[i] === "_2") {
@@ -496,6 +631,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(lionLocations);
                         mapLabels = mapLabels.concat(lionLabels);
+                        mapNames = mapNames.concat(lionNames);
                     }
 
                     if (pieSlices[i] === "_3") {
@@ -507,13 +643,14 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(cheetahLocations);
                         mapLabels = mapLabels.concat(cheetahLabels);
+                        mapNames = mapNames.concat(cheetahNames);
                     }
                 }
             }
             else {
 
                 // No slices selected (piechart has reset, show all safari details . . .
-                
+
                 $(".bigfive").show();
                 $(".elephants").show();
                 $(".lions").show();
@@ -522,6 +659,7 @@ $(document).ready(function() {
 
                 mapLocs = mapLocs.concat(bigFiveLocations, lionLocations, cheetahLocations, elephantLocations);
                 mapLabels = mapLabels.concat(bigFiveLabels, lionLabels, cheetahLabels, elephantLabels);
+                mapNames = mapNames.concat(bigFiveNames, lionNames, cheetahNames, elephantNames);
 
             }
         }
@@ -555,6 +693,18 @@ $(document).ready(function() {
                 { lat: -26.1715046, lng: 27.969983412 }
             ];
 
+            // Set the names for the Map Markers
+
+            var cityNames = [
+
+                "Stellenbosch, Western Cape",
+
+                "Port Elizabeth, Eastern Cape",
+
+                "Johannesburg, Gauteng"
+            ];
+
+
             var sceneryLabels = "BDJ";
             var sceneryLocations = [
 
@@ -568,6 +718,18 @@ $(document).ready(function() {
                 { lat: -33.9782911, lng: 23.547230515 }
             ];
 
+            // Set the names for the Map Markers
+
+            var sceneryNames = [
+
+                "Chapman's Peak, Cape Peninsula",
+
+                "Cape of Good Hope, Cape Peninsula",
+
+                "Nature's Valley, Southern Cape"
+
+            ];
+
             var whalesLabels = "H";
             var whalesLocations = [
 
@@ -575,11 +737,28 @@ $(document).ready(function() {
                 { lat: -34.0610681, lng: 23.29123112 }
             ];
 
+            // Set the names for the Map Markers
+
+            var whalesNames = [
+
+                "Plettenburg Bay, Western Cape"
+
+            ];
+
             var wineLabels = "F";
             var wineLocations = [
 
                 // F = Marianne Wine Estate
                 { lat: -33.8298546, lng: 18.877630117 }
+            ];
+
+
+            // Set the names for the Map Markers
+
+            var wineNames = [
+
+                "Marianne Wine Estate, Stellenbosch",
+
             ];
 
 
@@ -616,6 +795,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(cityLocations);
                         mapLabels = mapLabels.concat(cityLabels);
+                        mapNames = mapNames.concat(cityNames);
                     }
 
                     if (pieSlices[i] === "_1") {
@@ -625,6 +805,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(sceneryLocations);
                         mapLabels = mapLabels.concat(sceneryLabels);
+                        mapNames = mapNames.concat(sceneryNames);
                     }
 
                     if (pieSlices[i] === "_2") {
@@ -635,6 +816,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(whalesLocations);
                         mapLabels = mapLabels.concat(whalesLabels);
+                        mapNames = mapNames.concat(whalesNames);
                     }
 
                     if (pieSlices[i] === "_3") {
@@ -645,6 +827,7 @@ $(document).ready(function() {
 
                         mapLocs = mapLocs.concat(wineLocations);
                         mapLabels = mapLabels.concat(wineLabels);
+                        mapNames = mapNames.concat(wineNames);
                     }
                 }
             }
@@ -660,13 +843,14 @@ $(document).ready(function() {
 
                 mapLocs = mapLocs.concat(cityLocations, sceneryLocations, whalesLocations, wineLocations);
                 mapLabels = mapLabels.concat(cityLabels, sceneryLabels, whalesLabels, wineLabels);
+                mapNames = mapNames.concat(cityNames, sceneryNames, whalesNames, wineNames);
             }
 
         }
 
         // The following function is in maps.js. It shows the selected locations on the Map.
 
-        showOnMap(mapDetails, mapLocs, mapLabels);
+        showOnMap(mapDetails, mapLocs, mapLabels, mapNames);
     });
 
 });

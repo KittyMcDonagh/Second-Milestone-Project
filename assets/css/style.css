@@ -1,5 +1,3 @@
-
-
 .navbar-style {
     background-color: #db4437;
     color: #e7f0fe;
@@ -32,8 +30,8 @@
     width: 100%;
     text-decoration: none;
     color: #e7f0fe !important;
-    padding-left: 15px!important;
-    padding-right: 15px!important; 
+    padding-left: 8px!important;
+   padding-right: 8px!important;
 }
 
 /* Overwrite the top and bottom padding of .nav-link bootstrap class so that the pie can
@@ -50,6 +48,11 @@ be completely visible when an item is selected from the dropdown menu on a mobil
     background-color: #f4b400;
 }
 
+hr {
+
+    border-color: #e7f0fe;
+}
+
 /* This class will have  the same color for text and bg initially. 
    I will add "user-message-style-bg" when fading in the message  */
 
@@ -58,7 +61,7 @@ be completely visible when an item is selected from the dropdown menu on a mobil
     color: #e7f0fe;
     font-size: 18px;
     font-style: italic;
-    padding:5px;
+    padding: 5px;
 }
 
 .user-message-style-bg {
@@ -66,8 +69,8 @@ be completely visible when an item is selected from the dropdown menu on a mobil
 }
 
 #user-message-2 {
-    color:#0d5bd9;
-    font-size:13px;
+    color: #0d5bd9;
+    font-size: 13px;
     padding: 10px;
     font-style: italic;
 }
@@ -116,15 +119,16 @@ be completely visible when an item is selected from the dropdown menu on a mobil
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
-@media(min-height:800px) {
-    .bg-photo {
-        height: calc(100vh - 469px);
-
+@media(min-height:1000px) {
+    .gallery-height {
+        min-height: calc(100vh - 641px);
     }
 }
+
+
 
 .border-setting {
     border: solid 1px #87b2f8;
@@ -149,42 +153,41 @@ svg {
     height: 431px;
     width: 100%;
     position: relative;
- /*   border: solid 1px #87b2f8; */
-
+    /*   border: solid 1px #87b2f8; */
 }
 
 /* The heading above the chart is pushing the chart down. Move it up 20 pixels */
 
-.filter-heading-style  {
+.filter-heading-style {
     position: relative;
     color: #e7f0fe;
-    margin:0px;
+    margin: 0px;
     opacity: 1;
     font-style: italic;
     font-weight: Bold;
-    padding:3px 0;
+    padding: 3px 0;
 }
 
 .gallery-heading-style {
     position: relative;
     background-color: #0d5bd9;
     color: #e7f0fe;
-    margin:0px;
+    margin: 0px;
     opacity: 1;
     font-style: italic;
     font-weight: Bold;
-    padding:3px 0;
-    
+    padding: 3px 0;
+
 }
 
 .gallery-bg {
-   background-color: #e7f0fe; 
-   
+    background-color: #e7f0fe;
+
 }
 
 
 .map-style {
-    border-left: solid 1px #87b2f8; 
+    border-left: solid 1px #87b2f8;
 }
 
 /* P-style - background color: #6fa1f6; / color: #e7effd; */
@@ -232,8 +235,8 @@ div#map {
     display: block;
     margin-left: 0;
     margin-right: 0;
-    padding:15px;
-    
+    padding: 15px;
+
 }
 
 .image-padding {
@@ -266,7 +269,7 @@ div#map {
 /* Photo copied from Quayside Hotel website */
 
 .hotelquayside {
-    background: url("../images/quaysidehotel.jpg");
+    background: url("../images/hotelquayside.jpg");
     border-style: inset;
     border-width: 3px;
     border-radius: 5px;
@@ -280,6 +283,25 @@ div#map {
     -o-transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
 }
+
+/* Photo copied from Milkwood Manor website */
+
+.hotelmilkwood {
+    background: url("../images/hotelmilkwood.jpg");
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
 
 /* Photo copied from Protea Hotel website */
 
@@ -317,23 +339,6 @@ div#map {
     -webkit-transition: all .5s ease-in-out;
 }
 
-/* Photo copied from Milkwood Manor website */
-
-.lodgemilkwood {
-    background: url("../images/lodgemilkwood.jpg");
-    border-style: inset;
-    border-width: 3px;
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-}
 
 .lodgeglenafric {
     background: url("../images/lodgeglenafric.jpg");
@@ -352,6 +357,7 @@ div#map {
 }
 
 /*  Photo copied from Tripadvisor*/
+
 .restcampspekboom {
     background: url("../images/restcampspekboom.jpg");
     border-style: inset;
@@ -369,6 +375,7 @@ div#map {
 }
 
 /*  Photo copied from Google images*/
+
 .restcamplowersabie {
     background: url("../images/restcamplowersabie.jpg");
     border-style: inset;
@@ -590,7 +597,7 @@ div#map {
     -webkit-transition: all .5s ease-in-out;
 }
 
-/* Marianne Wine Estate - image copied from marianne wine estates website */
+/* Whale Watching, Plettenberg Bay - photo copied from http://oceansafaris.co.za/gallery/ */
 
 .sightseewhales {
     background: url("../images/sightseewhales.jpg");
@@ -667,7 +674,7 @@ div#map {
 .photo-links {
     font-style: italic;
     font-size: 13px;
-    
+
 }
 
 
