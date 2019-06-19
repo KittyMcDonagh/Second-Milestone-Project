@@ -8,7 +8,8 @@ $(document).ready(function() {
     $("#user-message").append("<p>Select <strong>Gallery</strong> to see <br>the photos below.</p>").hide();
     $("#user-message").append("<p>Select <strong>Home</strong> to <br>start again.</p>").hide();
     $("#user-message").addClass("user-message-style-bg");
-    $("#user-message").fadeTo(7000, .7);
+    $("#user-message").slideDown(1500);
+
 
     // If LODGINGS is clicked . . .
 
