@@ -95,7 +95,7 @@ $(document).ready(function() {
         $("#user-message-2").html("Click on a Slice to Filter")
 
         queue()
-            .defer(d3.json, "../data/sa-original.json")
+            .defer(d3.json, "assets/data/sa-original.json")
             .await(makeGraphs);
 
         function makeGraphs(error, transactionsData) {
@@ -194,7 +194,7 @@ $(document).ready(function() {
         $("#user-message").html("Safari Filter").show();
 
         queue()
-            .defer(d3.json, "../data/sa-original.json")
+            .defer(d3.json, "assets/data/sa-original.json")
             .await(makeGraphs);
 
         function makeGraphs(error, transactionsData) {
@@ -296,7 +296,7 @@ $(document).ready(function() {
         $("#user-message").html("Sightseeing Filter").show();
 
         queue()
-            .defer(d3.json, "../data/sa-original.json")
+            .defer(d3.json, "assets/data/sa-original.json")
             .await(makeGraphs);
 
         function makeGraphs(error, transactionsData) {
