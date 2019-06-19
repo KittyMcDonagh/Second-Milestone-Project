@@ -92,7 +92,7 @@ $(document).ready(function() {
         // Show the filter heading
         $("#user-message").addClass("filter-heading-style")
         $("#user-message").html("Lodgings Filter").show();
-        $("#user-message-2").html("Click on a Slice to Filter")
+        $("#user-message-2").html("Slice and Dice to Filter")
 
         queue()
             .defer(d3.json, "assets/data/sa-original.json")
