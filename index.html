@@ -23,8 +23,9 @@
 
     <section class="container-fluid p-0">
 
-        <!-- Show welcome message at the top of the page. This is fixed -->
         <header>
+
+            <!-- Navigation bar is fixed to the top of the screen -->
 
             <nav class="navbar navbar-expand-md navbar-light navbar-style fixed-top">
                 <a href="index.html" class="logo navbar-brand"></a>
@@ -47,7 +48,7 @@
 
         </header>
 
-        <!-- Main section contains Filter Piechart, Background Photo, Google Maps -->
+        <!-- Main section contains Filter Piechart, Google Maps, Gallery -->
 
         <main>
 
@@ -230,6 +231,7 @@
                 </div>
 
                 <!-- Show Sightseeing Gallery . . . -->
+
                 <div class="col-12 col-xl-4 p-0 m-0 border-setting gallery-bg" id="safari-info ">
                     <div class="row no-gutters p-0 ">
                         <div class="col-12 ">
@@ -298,14 +300,12 @@
                     </div>
 
                 </div>
-
-
-
             </div>
 
         </main>
 
         <!-- FOOTER -->
+
         <footer class="footer-style set-position ">
             <div class="row no-gutters ">
                 <div class="col p-0 ">
@@ -317,23 +317,23 @@
 
     </section>
 
-
     <!-- The main script for the Google api is loaded in head (see comments above). Other Scripts for Google Maps -->
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js "></script>
-    <!-- User interaction scripts are in this file. -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js " integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=" anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
 
+    <!-- User interaction scripts are in this file. -->
 
     <script src="assets/js/filters.js "></script>
 
-    <!-- Scripts to filter locations on Google maps are in this file -->
+    <!-- Scripts to show Google Maps and to filter locations are in this file -->
 
     <script src="assets/js/maps.js "></script>
 

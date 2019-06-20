@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+    // I learned how to do this coding from the javascript, jQuery and Manipulating the DOM lessons
+    // I leared how to set up the map details from the mini project to add the map to Rosie's resume. The code for loading
+    // the map is in maps.js
+
+    // This user message will slide onto the screen. It tells users how to use the website.
+    // The message is hidden initially and then slides onto the screen
+
     $("#user-message").html("<p><strong><em>Welcome to my South African Trip Web Page!</em></strong></p>").hide();
     $("#user-message").append("<hr>").hide();
     $("#user-message").append("<p>Select <strong>Lodgings, Safari,</strong> or <strong>Sight Seeing</strong> from the <br>above navigation menu.</p>").hide();
@@ -9,7 +16,7 @@ $(document).ready(function() {
     $("#user-message").append("<p>Select <strong>Home</strong> to <br>start again.</p>").hide();
     $("#user-message").addClass("user-message-style-bg");
     $("#user-message").slideDown(1500);
-    
+
     // Close down the collapsible menu, if open - this code found with help from Slack and Stack Overflow
 
     $('.navbar-nav>li>a').on('click', function() {
@@ -19,8 +26,6 @@ $(document).ready(function() {
     // If LODGINGS is clicked . . .
 
     $("#lodgings-link").click(function() {
-
-
 
         // Hide the user message
         $("#user-message").removeClass("user-message-style").hide();
@@ -62,6 +67,9 @@ $(document).ready(function() {
             { lat: -26.1486465, lng: 27.922543617 },
         ];
 
+        // The map names will appear in the infowindow of the markers. I couldn't work out how to get the names from the 
+        // google api, so I created my own solution to make the names appear in the marker infoWindow (see showOnMap in maps.js)
+
         var mapNames = [
 
             "Hotel Verde, Cape Town",
@@ -81,13 +89,10 @@ $(document).ready(function() {
             "Protea Hotel by Marriott, Roodepoort"
         ];
 
-
-
         var mapDetails = {
             // Center on Glen Afric
             center: { lat: -25.8135641, lng: 27.869428517 },
-            zoom: 5,
-            disableDefaultUI: true
+            zoom: 5
         };
 
         // The following function is in maps.js. It shows the selected locations on the Map.
@@ -106,6 +111,8 @@ $(document).ready(function() {
         queue()
             .defer(d3.json, "assets/data/sa-original.json")
             .await(makeGraphs);
+
+        // The code for the piecharts is copied from the SVG lessons and adjusted to manipulate the data I have given it
 
         function makeGraphs(error, transactionsData) {
             var ndx = crossfilter(transactionsData);
@@ -165,6 +172,11 @@ $(document).ready(function() {
             { lat: -25.5219364, lng: 27.67158617 }
         ];
 
+
+        // The map names will appear in the infowindow of the markers. I couldn't work out how to get the names from the 
+        // google api, so I created my own solution to make the names appear in the marker infoWindow (see showOnMap in maps.js)
+
+
         var mapNames = [
 
             "Elephant Park, Knysna",
@@ -189,12 +201,10 @@ $(document).ready(function() {
         var mapDetails = {
             // Center on Glen Afric
             center: { lat: -25.8135641, lng: 27.869428517 },
-            zoom: 5,
-            disableDefaultUI: true
+            zoom: 5
         };
 
         // The following function is in maps.js. It shows the selected locations on the Map.
-
 
         showOnMap(mapDetails, mapLocs, mapLabels, mapNames);
 
@@ -207,6 +217,8 @@ $(document).ready(function() {
         queue()
             .defer(d3.json, "assets/data/sa-original.json")
             .await(makeGraphs);
+
+        // The code for the piecharts is copied from the SVG lessons and adjusted to manipulate the data I have given it
 
         function makeGraphs(error, transactionsData) {
 
@@ -268,6 +280,11 @@ $(document).ready(function() {
 
         ];
 
+
+        // The map names will appear in the infowindow of the markers. I couldn't work out how to get the names from the 
+        // google api, so I created my own solution to make the names appear in the marker infoWindow (see showOnMap in maps.js)
+
+
         var mapNames = [
 
             "Chapman's Peak, Cape Peninsula",
@@ -293,8 +310,7 @@ $(document).ready(function() {
             // Center on Johannesburg
 
             center: { lat: -26.1715046, lng: 27.969983412 },
-            zoom: 5,
-            disableDefaultUI: true
+            zoom: 5
         };
 
         // The following function is in maps.js. It shows the selected locations on the Map.
@@ -311,6 +327,8 @@ $(document).ready(function() {
         queue()
             .defer(d3.json, "assets/data/sa-original.json")
             .await(makeGraphs);
+
+        // The code for the piecharts is copied from the SVG lessons and adjusted to manipulate the data I have given it
 
         function makeGraphs(error, transactionsData) {
 
@@ -354,8 +372,7 @@ $(document).ready(function() {
             var mapDetails = {
                 // Center on Glen Afric
                 center: { lat: -25.8135641, lng: 27.869428517 },
-                zoom: 5,
-                disableDefaultUI: true
+                zoom: 5
             };
 
             // Set the labels and locations for the Lodging Types . . .
@@ -505,8 +522,8 @@ $(document).ready(function() {
             var mapDetails = {
                 // Center on Glen Afric
                 center: { lat: -25.8135641, lng: 27.869428517 },
-                zoom: 5,
-                disableDefaultUI: true
+                zoom: 5
+
             };
 
             // Set the labels and locations for the Safari Types . . .
@@ -690,8 +707,8 @@ $(document).ready(function() {
                 // Center on Johannesburg
 
                 center: { lat: -26.1715046, lng: 27.969983412 },
-                zoom: 5,
-                disableDefaultUI: true
+                zoom: 5
+
             };
 
             // Set the labels and locations for the Sightseeing types . . .
