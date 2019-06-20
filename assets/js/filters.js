@@ -9,11 +9,18 @@ $(document).ready(function() {
     $("#user-message").append("<p>Select <strong>Home</strong> to <br>start again.</p>").hide();
     $("#user-message").addClass("user-message-style-bg");
     $("#user-message").slideDown(1500);
+    
+    // Close down the collapsible menu, if open - this code found with help from Slack and Stack Overflow
 
+    $('.navbar-nav>li>a').on('click', function() {
+        $('.navbar-collapse').collapse('hide');
+    });
 
     // If LODGINGS is clicked . . .
 
     $("#lodgings-link").click(function() {
+
+
 
         // Hide the user message
         $("#user-message").removeClass("user-message-style").hide();

@@ -5,22 +5,15 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
     <link rel="shortcut icon" href="assets/images/dub-cape.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google maps would only load consistently for me when I added it to the beginining of this file and removed the 'async' -->
+    <!-- Google maps would only load consistently for me when I added it to the beginining of this file and removed the 'async' as mentioned in the video -->
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9WcAVvxLiqeFJzcPccc9tSo0utW9BAIk&libraries=places&callback=initMap"></script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
-
-
 
     <title>SOUTH AFRICAN TRIP</title>
 
@@ -56,7 +49,7 @@
 
         <!-- Main section contains Filter Piechart, Background Photo, Google Maps -->
 
-        <main class="main-section">
+        <main>
 
             <div class="row no-gutters set-position border-setting">
 
@@ -71,7 +64,7 @@
                         <div class="col-12 p-0">
                             <div id="filter-piechart">
                                 <p id="user-message" class="user-message-style"></p>
-                                <p id="user-message-2"  class="m-0"></p>
+                                <p id="user-message-2" class="m-0"></p>
                             </div>
                         </div>
                     </div>
@@ -99,7 +92,7 @@
                 <div class="col-12 col-xl-4 p-0 m-0 border-setting gallery-bg" id="lodgings-info ">
                     <div class="row no-gutters p-0 ">
                         <div class="col-12 ">
-                            <h6 class="gallery-heading-style text-center ">Lodgings</h6>
+                            <h6 class="gallery-heading-style text-center text-uppercase">LODGINGS</h6>
                         </div>
                     </div>
                     <div class="row ml-auto mr-auto p-0 ">
@@ -170,7 +163,7 @@
                 <div class="col-12 col-xl-4 p-0 m-0 gallery-bg border-setting " id="safari-info ">
                     <div class="row no-gutters p-0 ">
                         <div class="col-12 ">
-                            <h6 class="gallery-heading-style text-center ">SAFARI</h6>
+                            <h6 class="gallery-heading-style text-center text-uppercase">SAFARI</h6>
                         </div>
                     </div>
                     <div class="row ml-auto mr-auto p-0 ">
@@ -240,7 +233,7 @@
                 <div class="col-12 col-xl-4 p-0 m-0 border-setting gallery-bg" id="safari-info ">
                     <div class="row no-gutters p-0 ">
                         <div class="col-12 ">
-                            <h6 class="gallery-heading-style text-center ">SIGHT SEEING</h6>
+                            <h6 class="gallery-heading-style text-center text-uppercase">SIGHT SEEING</h6>
                         </div>
                     </div>
                     <div class="row ml-auto mr-auto p-0 ">
@@ -317,7 +310,7 @@
             <div class="row no-gutters ">
                 <div class="col p-0 ">
                     <p class="footer-padding nav-item menu-nav-links text-uppercase"><a class="nav-link" href="index.html">MY SOUTH AFRICAN TRIP</a></P>
-                    
+
                 </div>
             </div>
         </footer>
@@ -325,15 +318,19 @@
     </section>
 
 
-
+    <!-- The main script for the Google api is loaded in head (see comments above). Other Scripts for Google Maps -->
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js "></script>
+    <!-- User interaction scripts are in this file. -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js " integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=" anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
 
-    <!-- The main script for the Google api is loaded in head (see comments above). Other Scripts for Google Maps -->
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js "></script>
-    <!-- User interaction scripts are in this file. -->
+
     <script src="assets/js/filters.js "></script>
 
     <!-- Scripts to filter locations on Google maps are in this file -->

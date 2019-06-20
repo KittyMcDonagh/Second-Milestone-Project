@@ -87,17 +87,13 @@ hr {
     border-radius: 100px;
     background-repeat: no-repeat;
     background-size: cover;
-    -moz-transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
 }
 
 
-.main-section {}
-
-
-
+/* As the Navigation Bar is fixed and is 80px in height, the divs need to be be pushed down 80px*/
 
 .set-position {
     position: relative;
