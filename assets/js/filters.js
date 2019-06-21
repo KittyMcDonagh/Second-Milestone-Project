@@ -106,7 +106,7 @@ function showLodgings() {
     $(".sightseeing").hide();
 
     // Show the filter heading
-    $("#user-message").addClass("filter-heading-style")
+    $("#user-message").addClass("filter-heading-style");
     $("#user-message").html("Lodgings Filter").show();
     $("#user-message-2").html("Filter map Markers and Photos");
 
@@ -211,7 +211,7 @@ function showSafari() {
     $(".sightseeing").hide();
 
     // Show the filter heading
-    $("#user-message").addClass("filter-heading-style")
+    $("#user-message").addClass("filter-heading-style");
     $("#user-message").html("Safari Filter").show();
     $("#user-message-2").html("Filter map Markers and Photos");
 
@@ -320,7 +320,7 @@ function showSightSeeing() {
 
     // Show the filter heading
 
-    $("#user-message").addClass("filter-heading-style")
+    $("#user-message").addClass("filter-heading-style");
     $("#user-message").html("Sightseeing Filter").show();
     $("#user-message-2").html("Filter map Markers and Photos");
 

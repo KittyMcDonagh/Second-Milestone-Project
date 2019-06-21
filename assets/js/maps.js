@@ -120,7 +120,6 @@ function showOnMap(mapDetails, mapLocs, mapLabels, mapNames) {
         });
         mapMarkers[i] = new google.maps.Marker({
             position: mapLocs[i]
-
         });
     });
 
@@ -129,7 +128,7 @@ function showOnMap(mapDetails, mapLocs, mapLabels, mapNames) {
 
     for (i = 0; i < mapLocs.length; i++) {
 
-        let markerName = mapNames[i].slice(0)
+        var markerName = mapNames[i].slice(0)
 
         google.maps.event.addListener(mapMarkers[i], 'click', function() {
 
