@@ -104,7 +104,8 @@ function initMap() {
     var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
 
-//...............Show specific locations on the map
+
+//This function is called from filter.js to show selection locations and marker infowindows on the map
 
 function showOnMap(mapDetails, mapLocs, mapLabels, mapNames) {
     
