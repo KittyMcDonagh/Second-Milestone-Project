@@ -133,7 +133,7 @@ function showLodgings() {
         dc.renderAll();
     }
 
-    // Show the Lodgins Markers on the map
+    // Show the Lodgings Markers on the map
 
     var mapLabels = "ACGILNPQ";
     var mapLocs = [

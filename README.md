@@ -121,7 +121,7 @@ The website will:
 
 
 
-# **5. TESTING**
+# **5. MANUAL TESTING**
 
 ## **5.1 South African Trip Web Page**
 
@@ -189,8 +189,21 @@ The website will:
 
 1. Click on each link under each photo and verify that the website for that link opens in a new tab
 
+# **5. JASMINE TESTING**
 
+**NOTE**
+1. I am not sure if I have taken the right approach to Jasmine testing, but here's what I have done:
+   - I have taken the functions that deal with user interactions and created some jasmine tests
+   - I have removed any code that takes values from the DOM or adds information to the DOM
+   - The values being tested are passed in from calcSpec
+   - I have based the test around being able to return the correct Marker Labels and Location names only 
+   - I am testing only my own javascript code - I'm not testing dc/d3 or maps (I don't know how to do that)
     
+### Navigation Test
+1. I tested that the Main Headings (Lodgings, Safari, and Sight Seeing) returned the correct marker labels and location names
+2. I tested that the Filter Piecharts returned the correct marker labels and location names depending on which 'slice' was selected
+
+
 # 6. DEPLOYMENT
 
 ## 6.1 DEPLOYING FROM GITHUB 
